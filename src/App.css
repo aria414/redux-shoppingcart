@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+.cart,
+.item,
+.itemList {
+  border: 1px solid;
+  width: 100%;
+  min-height: 300px;
+  margin: 30px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1424px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.product {
+  width: 100%;
+  border: 1px solid blue;
+}
+
+.product img {
+  width: 30%;
+  object-fit: cover;
+}
+button {
+  max-width: 100px;
+  max-height: 50px;
+  min-height: 30px;
+  background-color: white;
+}
+
+button:hover {
+  background-color: rgb(87, 207, 157);
+}
+
+@media only screen and (max-width: 992px) {
+  .hide-on-med-and-down {
+    display: block !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+  border: 1px solid #929292 !important;
+  width: 50px !important;
+  height: 35px !important;
+  border-radius: 10px !important;
+  padding: 3px !important;
+  text-align: center !important;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 715px) {
+  .hide-on-med-and-down {
+    display: none !important;
   }
 }
