@@ -44,7 +44,8 @@ const INITIAL_STATE = {
 
 ## Wireframes
 
-- [Wireframes In Progress](/images/figmaWip.jpg)
+- [Wireframes](https://github.com/aria414/redux-shoppingcart/tree/master/images)
+
 - [React Architecture]
 
 ### TIME PROXIMITY TABLES

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { connect } from "react-redux";
-import { removeFromCart, adjustItemQty } from "./actions";
+import { removeFromCart, adjustItemQty } from "../actions";
 
 //itemData was passed in from Cart.
 const CartItem = ({ itemData, removeFromCart, adjustQty }) => {

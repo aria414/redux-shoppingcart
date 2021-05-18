@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
+import "../App.css";
 //This connects to the store so you don't have to pass it as a prop from App.js
 //connect is a higher order function which is why you see (mapstate)(products)
 import { connect } from "react-redux";
 //import component OneProduct
-import OneProduct from "./OneProduct";
+import OneProduct from "../components/OneProduct";
 
 //{products} Destructured from mapStateToProps
 const ProductList = ({ products }) => {

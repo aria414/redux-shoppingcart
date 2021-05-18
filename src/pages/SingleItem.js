@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { addToCart } from "./actions";
+import { addToCart } from "../actions";
 
 const SingleItem = ({ current, addToCart }) => {
   return (

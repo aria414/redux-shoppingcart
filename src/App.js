@@ -1,14 +1,14 @@
 import "./App.css";
 //Component imports...
-import ProductList from "./ProductList";
-import Cart from "./Cart";
-import SingleItem from "./SingleItem";
+import Navbar from "./components/Navbar";
+import ProductList from "./pages/ProductList";
+import Cart from "./pages/Cart";
+import SingleItem from "./pages/SingleItem";
 //Router imports
 import { Route, Switch, Link, Redirect } from "react-router-dom";
 //Access the states in the store
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";
-import Navbar from "./Navbar";
 
 //Destructure 'current' in the mapstate func below.
 function App({ current }) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import CartItem from "./CartItem";
-import { clearCart } from "./actions";
+import CartItem from "../components/CartItem";
+import { clearCart } from "../actions";
 
 const Cart = ({ cart, clearCart }) => {
   const [totalPrice, setTotalPrice] = useState(0);

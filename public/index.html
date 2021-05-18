@@ -17,7 +17,7 @@
     />
 
     <!-- MATERIALIZE CSS CDN LINK -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
@@ -28,7 +28,29 @@
         var elems = document.querySelectorAll(".sidenav");
         var instances = M.Sidenav.init(elems, {});
       });
+    </script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLink = document.querySelectorAll(".nav-link");
+
+        hamburger.addEventListener("click", mobileMenu);
+        navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+        function mobileMenu() {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        }
+
+        function closeMenu() {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        }
+      });
     </script>
+
     <link rel="apple-touch-icon" href="" />
     <!--
       manifest.json provides metadata used when your web app is installed on a

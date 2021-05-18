@@ -1,9 +1,9 @@
 import React from "react";
-import "./App.css";
+import "../App.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //import actions
-import { addToCart, loadCurrentItem } from "./actions";
+import { addToCart, loadCurrentItem } from "../actions";
 
 //productData passed in as prop
 //addToCart and loadCurrentItem are from the keys below in the function mapDispatchToProps
@@ -13,9 +13,9 @@ const OneProduct = ({ productData, addToCart, loadCurrentItem }) => {
       <img src={productData.image} alt={productData.title} />
 
       <div className="product-details">
-        <p>{productData.title}</p>
+        <h3>{productData.title}</h3>
         <p>{productData.description}</p>
-        <p>{productData.price}</p>
+        <h3>${productData.price}</h3>
       </div>
 
       <div className="product-btns">
