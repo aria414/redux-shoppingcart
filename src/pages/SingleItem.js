@@ -13,7 +13,9 @@ const SingleItem = ({ current, addToCart }) => {
         <p>$ {current.price}</p>
 
         <div className="product-btns">
-          <button onClick={() => addToCart(current.id)}>Add To Cart</button>
+          <button className="add-item" onClick={() => addToCart(current.id)}>
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>

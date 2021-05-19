@@ -16,37 +16,57 @@ const Navbar = ({ cart }) => {
   }, [cart, cartCount]);
 
   return (
-    <header class="header">
-      <nav class="navbar">
-        <a href="#" class="nav-logo">
+    <header className="header">
+      <nav className="top-nav">
+        <Link to="/" className="nav-logo">
           iLuvStuff
-        </a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Services
-            </a>
+        </Link>
+        <ul className="top-nav-icons">
+          <li>
+            <span class="material-icons">account_circle</span>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Blog
-            </a>
+          <li>
+            <Link to="/cart" className="nav-link">
+              <span class="material-icons">shopping_cart</span>
+              {cartCount}
+            </Link>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              About
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Contact
-            </a>
+          <li>
+            <span class="material-icons">favorite</span>
           </li>
         </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+      </nav>
+      <nav className="navbar">
+        <ul className="nav-menu">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to="/list" className="nav-link">
+              Product Listing
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/cart" className="nav-link">
+              Cart: {cartCount}
+            </Link>
+          </li>
+        </ul>
+
+        <div className="hamburger">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
+        <div className="search-bar">
+          <input type="text" id="search" name="search" placeholder="search" />
+          <button id="submit">
+            <span class="material-icons">search</span>
+          </button>
         </div>
       </nav>
     </header>

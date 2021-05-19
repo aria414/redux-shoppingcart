@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //import actions
@@ -20,11 +19,17 @@ const OneProduct = ({ productData, addToCart, loadCurrentItem }) => {
 
       <div className="product-btns">
         <Link to={`product/${productData.id}`}>
-          <button onClick={() => loadCurrentItem(productData)}>
+          <button
+            className="view-item"
+            onClick={() => loadCurrentItem(productData)}
+          >
             View Item
           </button>
         </Link>
-        <button onClick={() => addToCart(productData.id)}> Add to Cart</button>
+        <button className="add-item" onClick={() => addToCart(productData.id)}>
+          {" "}
+          Add to Cart
+        </button>
       </div>
     </div>
   );
