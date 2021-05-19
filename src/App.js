@@ -20,6 +20,10 @@ function App({ current }) {
     <div>
       <Navbar />
       <div className="container">
+        <div className="sale-banner">
+          20% off on all clearance items. Free shipping for orders over $50.Use
+          code SHIPFREE at checkout for shipping discount
+        </div>
         <Switch>
           <Route exact path="/">
             <ProductList />
