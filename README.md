@@ -58,9 +58,10 @@ Wanna see how long it took to build?
 | ----------------------------- | :------: | :------------: | :---------: |
 | Simple Redux tutorial - Built |    H     |     3 hrs      |    2 hrs    |
 | Shoping Cart Tutorial - Built |    H     |     5 hrs      |    4 hrs    |
-| Mobile Product List Page      |    H     |     2 hrs      |    2 hrs    |
-| Tablet Product List Page      |    H     |     3 hrs      |    3 hrs    |
-| Desktop Product List Page     |    H     |     4 hrs      |    4 hrs    |
+| Mobile Nav                    |    H     |     3 hrs      |    3 hrs    |
+| Mobile Product List Page      |    H     |     2 hrs      |     hrs     |
+| Tablet Product List Page      |    H     |     3 hrs      |     hrs     |
+| Desktop Product List Page     |    H     |     4 hrs      |     hrs     |
 | Mobile Single Product Page    |    H     |     4 hrs      |     hrs     |
 | Tablet Single Product Page    |    H     |     3 hrs      |     hrs     |
 | Desktop Single Product Page   |    H     |     2 hrs      |     hrs     |

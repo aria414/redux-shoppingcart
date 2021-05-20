@@ -9,7 +9,6 @@ import OneProduct from "../components/OneProduct";
 const ProductList = ({ products }) => {
   return (
     <div className="itemList">
-      <h2>This is a list of products</h2>
       {products.map((item) => {
         return <OneProduct key={item.id} productData={item} />;
       })}

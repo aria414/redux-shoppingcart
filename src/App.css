@@ -56,20 +56,29 @@ a {
   margin: 30px auto;
 }
 
+/* ======================================
+PRODUCT LISTING 
+====================================== */
+.itemList {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .container {
-  max-width: 1424px;
   padding-top: 128px;
 }
 
 .product {
-  width: 100%;
-  border: 1px solid blue;
+  width: 45%;
+  margin: 0 0 10% 4%;
 }
 
 .product img {
-  width: 30%;
+  width: 100%;
   object-fit: cover;
 }
+
 .add-item,
 .view-item {
   max-width: 100px;
@@ -99,6 +108,13 @@ input {
 .sale-banner {
   padding: 2%;
   background: #f8c699;
+}
+
+.advertise-banner {
+  padding: 2%;
+  height: 250px;
+  background: #fff1f1;
+  text-align: center;
 }
 
 /*--- MATERIALIZE CSS 

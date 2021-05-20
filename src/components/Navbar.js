@@ -23,16 +23,16 @@ const Navbar = ({ cart }) => {
         </Link>
         <ul className="top-nav-icons">
           <li>
-            <span class="material-icons">account_circle</span>
+            <span className="material-icons">account_circle</span>
           </li>
           <li>
             <Link to="/cart" className="nav-link">
-              <span class="material-icons">shopping_cart</span>
+              <span className="material-icons">shopping_cart</span>
               {cartCount}
             </Link>
           </li>
           <li>
-            <span class="material-icons">favorite</span>
+            <span className="material-icons">favorite</span>
           </li>
         </ul>
       </nav>
@@ -65,7 +65,7 @@ const Navbar = ({ cart }) => {
         <div className="search-bar">
           <input type="text" id="search" name="search" placeholder="search" />
           <button id="submit">
-            <span class="material-icons">search</span>
+            <span className="material-icons">search</span>
           </button>
         </div>
       </nav>

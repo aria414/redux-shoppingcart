@@ -24,6 +24,11 @@ function App({ current }) {
           20% off on all clearance items. Free shipping for orders over $50.Use
           code SHIPFREE at checkout for shipping discount
         </div>
+        <div className="advertise-banner">
+          <h1>SHOP HOME DECOR</h1>
+          <p>20% off on all clearance items</p>
+          <button>Shop Sale</button>
+        </div>
         <Switch>
           <Route exact path="/">
             <ProductList />

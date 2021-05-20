@@ -13,6 +13,13 @@ const INITIAL_STATE = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nibh sed pulvinar proin. Aliquam sem fringilla ut morbi tincidunt. Quis risus sed vulputate odio ut enim blandit volutpat. Sed turpis tincidunt id aliquet risus. Massa eget egestas purus viverra. Viverra aliquet eget sit amet tellus cras adipiscing. cube will keep you busy the entire day and it is very fun to play with",
       price: 15,
+      rating: 4,
+      attributes: {
+        width: 5,
+        depth: 5,
+        height: 5,
+        material: "Plastic",
+      },
       image:
         "https://images.unsplash.com/photo-1591991731833-b4807cf7ef94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     },
@@ -22,6 +29,13 @@ const INITIAL_STATE = {
       description:
         "Consectetur adipiscing elit ut aliquam. Dui accumsan sit amet nulla facilisi. Dui accumsan sit amet nulla facilisi morbi. Integer enim neque volutpat ac tincidunt vitae. Morbi blandit cursus risus at ultrices mi tempus. ",
       price: 14.95,
+      rating: 5,
+      attributes: {
+        width: 4.5,
+        depth: 4.5,
+        height: 6,
+        material: "Ceramic",
+      },
       image:
         "https://images.unsplash.com/photo-1572119865084-43c285814d63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     },
@@ -31,6 +45,13 @@ const INITIAL_STATE = {
       description:
         "Nunc faucibus a pellentesque sit amet porttitor eget. Erat imperdiet sed euismod nisi porta. In arcu cursus euismod quis viverra. Sed id semper risus in hendrerit. Praesent elementum facilisis leo vel fringilla. Eget nulla facilisi etiam dignissim. Ipsum consequat nisl vel pretium.",
       price: 65.99,
+      rating: 3.5,
+      attributes: {
+        width: 8.5,
+        depth: 11,
+        height: 6,
+        material: "Paper and Ink",
+      },
       image:
         "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
     },
