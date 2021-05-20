@@ -55,6 +55,22 @@ const INITIAL_STATE = {
       image:
         "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
     },
+    {
+      id: 4,
+      title: "Hangry Seibah Plushie",
+      description:
+        "Haunted Arturia Pendragon doll that eats all your rice and calls you a mastah... Taken from a meme. Real description - Mochimochi Mascot M Fate/stay night [Unlimited Blade Works] Saber",
+      price: 47.99,
+      rating: 5,
+      attributes: {
+        width: 11.78,
+        depth: 6.55,
+        height: 6.55,
+        material: "Cotton",
+      },
+      image:
+        "https://static.myfigurecollection.net/pics/figure/large/447232.jpg",
+    },
   ],
   cart: [],
   currentItem: null,

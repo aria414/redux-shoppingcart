@@ -5,7 +5,7 @@ import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
 import SingleItem from "./pages/SingleItem";
 //Router imports
-import { Route, Switch, Link, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 //Access the states in the store
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";

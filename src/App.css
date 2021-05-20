@@ -63,41 +63,8 @@ a {
 /* ======================================
 PRODUCT LISTING 
 ====================================== */
-.itemList {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
 .container {
   padding-top: 128px;
-}
-
-.product {
-  width: 45%;
-  margin: 0 0 10% 4%;
-}
-
-.product img {
-  width: 100%;
-  object-fit: cover;
-}
-.product-details h3 {
-  font-size: 1.1em;
-  color: #03a800;
-}
-
-.product-details p {
-  font-size: 0.8em;
-  color: #8a8a8a;
-  margin: 10px 0;
-}
-
-.add-item,
-.view-item {
-  max-width: 100px;
-  max-height: 50px;
-  min-height: 30px;
 }
 
 button {
@@ -136,6 +103,73 @@ input {
   text-align: center;
 }
 
+.itemList {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 45%;
+  margin: 0 0 10% 4%;
+}
+
+.product img {
+  width: 100%;
+  min-height: 170px;
+  object-fit: cover;
+}
+.product-details h3 {
+  font-size: 1.1em;
+  color: #03a800;
+}
+
+.product-details p {
+  font-size: 0.8em;
+  color: #8a8a8a;
+  margin: 10px 0;
+}
+
+.add-item,
+.view-item {
+  max-width: 100px;
+  max-height: 50px;
+  min-height: 30px;
+}
+
+/* --------- 
+STAR REVIEW ICONS SECTION 
+Borrowed from the css-tricks website:
+ https://css-tricks.com/five-methods-for-five-star-ratings/
+------- */
+:root {
+  --star-size: 1em;
+  --star-color: #c7c7c7;
+  --star-background: #003a94;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: "Roboto", serif;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.Stars:before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--star-background) var(--percent),
+    var(--star-color) var(--percent)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 400;
+}
 /*--- MATERIALIZE CSS 
 @media only screen and (max-width: 992px) {
   .hide-on-med-and-down {
@@ -250,8 +284,8 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 
 #submit {
   border: none;
-  background-color: white;
   line-height: 0;
+  padding: 0px;
 }
 #submit:hover {
   background-color: white;

@@ -23,22 +23,11 @@ const OneProduct = ({ productData, addToCart, loadCurrentItem }) => {
         <h4>{productData.title}</h4>
         <p>Attributes: {productAttr}</p>
         <h3>${productData.price}</h3>
-        <p>Rating: {productData.rating}</p>
-      </div>
-
-      <div className="product-btns">
-        <Link to={`product/${productData.id}`}>
-          <button
-            className="view-item"
-            onClick={() => loadCurrentItem(productData)}
-          >
-            View Item
-          </button>
-        </Link>
-        <button className="add-item" onClick={() => addToCart(productData.id)}>
-          {" "}
-          Add to Cart
-        </button>
+        <div
+          className="Stars"
+          style={{ "--rating": productData.rating }}
+          aria-label={`Rating of this product is ${productData.rating} out of 5.`}
+        ></div>
       </div>
     </div>
   );
