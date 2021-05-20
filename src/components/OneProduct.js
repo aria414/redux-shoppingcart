@@ -12,12 +12,16 @@ const OneProduct = ({ productData, addToCart, loadCurrentItem }) => {
 
   return (
     <div className="product">
-      <img src={productData.image} alt={productData.title} />
+      <Link
+        to={`product/${productData.id}`}
+        onClick={() => loadCurrentItem(productData)}
+      >
+        <img src={productData.image} alt={productData.title} />
+      </Link>
 
       <div className="product-details">
-        <h3>{productData.title}</h3>
+        <h4>{productData.title}</h4>
         <p>Attributes: {productAttr}</p>
-        <p>{productData.description}</p>
         <h3>${productData.price}</h3>
         <p>Rating: {productData.rating}</p>
       </div>
