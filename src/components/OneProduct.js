@@ -28,6 +28,7 @@ const OneProduct = ({ productData, addToCart, loadCurrentItem }) => {
           style={{ "--rating": productData.rating }}
           aria-label={`Rating of this product is ${productData.rating} out of 5.`}
         ></div>
+        <span>(278 Reviews)</span>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const CartItem = ({ itemData, removeFromCart, adjustQty }) => {
         <p>$ {itemData.price}</p>
       </div>
 
-      <div className="product-details">
+      <div>
         <div>
           <label htmlFor="qty">Qty</label>
           <input

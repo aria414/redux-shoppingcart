@@ -13,7 +13,7 @@ const INITIAL_STATE = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nibh sed pulvinar proin. Aliquam sem fringilla ut morbi tincidunt. Quis risus sed vulputate odio ut enim blandit volutpat. Sed turpis tincidunt id aliquet risus. Massa eget egestas purus viverra. Viverra aliquet eget sit amet tellus cras adipiscing. cube will keep you busy the entire day and it is very fun to play with",
       price: 15,
-      rating: 4,
+      rating: 3,
       attributes: {
         width: 5,
         depth: 5,

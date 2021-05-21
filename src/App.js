@@ -1,9 +1,12 @@
 import "./App.css";
 //Component imports...
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
 import SingleItem from "./pages/SingleItem";
+import bannerAd from "./banner-ad.png";
+
 //Router imports
 import { Route, Switch, Redirect } from "react-router-dom";
 //Access the states in the store
@@ -14,6 +17,7 @@ import { connect } from "react-redux";
 function App({ current }) {
   //Access the products state from the Store
   const shop = useSelector((state) => state.shop);
+  console.log(bannerAd);
 
   console.log(shop);
   return (
@@ -25,7 +29,8 @@ function App({ current }) {
           code SHIPFREE at checkout for shipping discount
         </div>
         <div className="advertise-banner">
-          <h1>SHOP HOME DECOR</h1>
+          <img src={bannerAd} alt="Sale banner image" />
+          <h2>SHOP HOME DECOR</h2>
           <p>20% off on all clearance items</p>
           <button>Shop Sale</button>
         </div>
@@ -48,6 +53,7 @@ function App({ current }) {
           )}
         </Switch>
       </div>
+      <Footer />
     </div>
   );
 }

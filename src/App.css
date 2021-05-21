@@ -48,13 +48,15 @@ li {
 }
 
 a {
+  color: #000000;
   text-decoration: none;
 }
 
-.cart,
-.item,
+a:hover {
+  color: #a04661;
+}
+
 .itemList {
-  border: 1px solid;
   width: 100%;
   min-height: 300px;
   margin: 30px auto;
@@ -68,7 +70,6 @@ PRODUCT LISTING
 }
 
 button {
-  padding: 2%;
   background-color: white;
   border: 1px solid #929292;
 }
@@ -97,10 +98,26 @@ input {
 }
 
 .advertise-banner {
-  padding: 2%;
+  padding: 5% 2%;
   height: 250px;
   background: #fff1f1;
   text-align: center;
+  font-family: "Work-Sans" sans-serif;
+}
+
+.advertise-banner h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2em;
+  margin: 5% 0;
+}
+
+.advertise-banner button {
+  border-radius: 5px;
+  background-color: #8aa476;
+  color: white;
+  width: 120px;
+  height: 35px;
+  margin: 5% 0;
 }
 
 .itemList {
@@ -128,6 +145,11 @@ input {
   font-size: 0.8em;
   color: #8a8a8a;
   margin: 10px 0;
+}
+.product-details span {
+  margin-left: 8px;
+  font-size: 0.8em;
+  color: #8a8a8a;
 }
 
 .add-item,
@@ -242,9 +264,9 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
   text-transform: uppercase;
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
   color: #03a800;
-}
+} */
 
 .nav-logo {
   font-family: "Playfair Display", serif;
@@ -330,4 +352,52 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
     -webkit-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/*  ==========================================
+======== FOOTER STYLES ========
+==========================================*/
+footer {
+  background: #ededed;
+  padding: 5%;
+  font-family: "Open-Sans", sans-serif;
+}
+
+footer li {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+footer h2,
+footer button,
+.footer-column {
+  margin-bottom: 5%;
+}
+
+footer button {
+  display: block;
+  width: 150px;
+  height: 35px;
+  background: #00a0b6;
+  color: white;
+  border: none;
+  padding: 0px;
+}
+
+footer a:hover {
+  color: #a04661;
+}
+.social-media {
+  text-align: center;
+}
+
+.lab {
+  font-size: 30px;
+  color: black;
+  margin-left: 5%;
+}
+
+.footnotes {
+  font-size: 12px;
+  font-weight: 300;
 }
