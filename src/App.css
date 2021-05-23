@@ -27,15 +27,12 @@ GENERIC CSS / APP
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
   font-weight: 400;
   line-height: 1.5;
   font-family: "Work Sans", sans-serif;
   color: #454649;
+  font-size: 16px;
 }
 
 h1,
@@ -47,16 +44,16 @@ h4 {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 h2 {
-  font-size: 1.3em;
+  font-size: 1.6em;
 }
 h3 {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 h4 {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 li {
@@ -386,12 +383,15 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 ==========================================*/
 footer {
   background: #ededed;
-  padding: 5%;
+  padding: 5% 7%;
   font-family: "Open-Sans", sans-serif;
 }
 
 footer li {
   font-weight: 300;
+}
+footer h3 {
+  font-size: 1.2em;
 }
 
 footer h3,
