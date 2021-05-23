@@ -1,9 +1,9 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { addToCart } from "../actions";
+import { addToCart, addToFave } from "../actions";
 
-const SingleItem = ({ current, addToCart }) => {
+const SingleItem = ({ current, addToCart, addToFave }) => {
   return (
     <div className="product">
       <img src={current.image} alt={current.title} />
@@ -15,6 +15,9 @@ const SingleItem = ({ current, addToCart }) => {
         <div className="product-btns">
           <button className="add-item" onClick={() => addToCart(current.id)}>
             Add To Cart
+          </button>
+          <button className="fave-item" onClick={() => addToFave(current.id)}>
+            Add To Fave
           </button>
         </div>
       </div>
@@ -31,6 +34,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id)),
+    addToFave: (id) => dispatch(addToFave(id)),
   };
 };
 

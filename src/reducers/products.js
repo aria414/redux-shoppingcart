@@ -3,6 +3,8 @@ const ADJUST_ITEM_QTY = "ADJUST_ITEM_QTY";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 const LOAD_CURRENT_ITEM = "LOAD_CURRENT_ITEM";
 const CLEAR_CART = "CLEAR_CART";
+const ADD_TO_FAVE = "ADD_TO_FAVE";
+const REMOVE_FROM_FAVE = "REMOVE_FROM_FAVE";
 
 //There are three states here.. products, cart and currentItem
 const INITIAL_STATE = {
@@ -22,6 +24,7 @@ const INITIAL_STATE = {
       },
       image:
         "https://images.unsplash.com/photo-1591991731833-b4807cf7ef94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      faved: false,
     },
     {
       id: 2,
@@ -38,6 +41,7 @@ const INITIAL_STATE = {
       },
       image:
         "https://images.unsplash.com/photo-1572119865084-43c285814d63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      faved: false,
     },
     {
       id: 3,
@@ -54,6 +58,7 @@ const INITIAL_STATE = {
       },
       image:
         "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
+      faved: false,
     },
     {
       id: 4,
@@ -70,9 +75,11 @@ const INITIAL_STATE = {
       },
       image:
         "https://static.myfigurecollection.net/pics/figure/large/447232.jpg",
+      faved: false,
     },
   ],
   cart: [],
+  fave: [],
   currentItem: null,
 };
 
@@ -116,6 +123,30 @@ const shopReducer = (state = INITIAL_STATE, action) => {
             : item
         ),
       };
+    case ADD_TO_FAVE:
+      // Get Item data from products array above. Use the find method in JS to find the first matching.
+      const faveItem = state.products.find(
+        (product) => product.id === action.payload.id
+      );
+
+      // Check if Item is in fave array already. Returns true/false
+      const inFave = state.fave.find((item) =>
+        item.id === action.payload.id ? true : false
+      );
+
+      //If in fave, return the state of the fave. If NOT in fave, map it over and adjust the quantity of the item in fave
+      return {
+        ...state,
+        fave: inFave ? [...state.fave] : [faveItem, ...state.fave],
+      };
+
+    case REMOVE_FROM_FAVE:
+      //Filter out array to show everything EXCLUDING item you selected.
+      return {
+        ...state,
+        cart: state.fave.filter((item) => item.id !== action.payload.id),
+      };
+
     case LOAD_CURRENT_ITEM:
       return {
         ...state,

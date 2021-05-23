@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const Navbar = ({ cart }) => {
+const Navbar = ({ cart, fave }) => {
   const [cartCount, setCartCount] = useState(0);
+  const [faveCount, setFaveCount] = useState(0);
 
   //State change if cart changes or cart count.
   useEffect(() => {
@@ -12,8 +13,14 @@ const Navbar = ({ cart }) => {
       count += item.qty;
     });
 
+    let faveCount = 0;
+    fave.forEach((item) => {
+      faveCount += 1;
+    });
+
     setCartCount(count);
-  }, [cart, cartCount]);
+    setFaveCount(faveCount);
+  }, [cart, cartCount, fave, faveCount]);
 
   return (
     <header className="header">
@@ -33,6 +40,7 @@ const Navbar = ({ cart }) => {
           </li>
           <li>
             <span className="material-icons">favorite</span>
+            {faveCount}
           </li>
         </ul>
       </nav>
@@ -52,6 +60,11 @@ const Navbar = ({ cart }) => {
           <li className="nav-item">
             <Link to="/cart" className="nav-link">
               Cart: {cartCount}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/fave" className="nav-link">
+              Fave: {faveCount}
             </Link>
           </li>
         </ul>
@@ -76,6 +89,7 @@ const Navbar = ({ cart }) => {
 const mapStateToProps = (state) => {
   return {
     cart: state.shop.cart,
+    fave: state.shop.fave,
   };
 };
 export default connect(mapStateToProps)(Navbar);

@@ -102,7 +102,7 @@ input {
   width: 100%;
   min-height: 300px;
   max-height: 500px;
-  background: #fff1f1;
+  background: #fbf5ed;
   text-align: center;
   font-family: "Work-Sans" sans-serif;
 }
@@ -115,13 +115,13 @@ input {
 
 .advertise-banner h2 {
   font-family: "Playfair Display", serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin: 5% 0;
 }
 
 .advertise-banner button {
   border-radius: 5px;
-  background-color: #8aa476;
+  background-color: #5e9236;
   color: white;
   width: 120px;
   height: 35px;
@@ -175,7 +175,7 @@ Borrowed from the css-tricks website:
 :root {
   --star-size: 1em;
   --star-color: #c7c7c7;
-  --star-background: #003a94;
+  --star-background: #002f6f;
 }
 
 .Stars {
@@ -397,12 +397,13 @@ footer a:hover {
 }
 .social-media {
   text-align: center;
+  margin: 7% 0;
 }
 
 .lab {
   font-size: 30px;
   color: black;
-  margin-left: 5%;
+  margin-left: 7%;
 }
 
 .footnotes {

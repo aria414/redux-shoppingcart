@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
+import Fave from "./pages/Fave";
 import SingleItem from "./pages/SingleItem";
 import adbanner from "./adbanner.png";
 
@@ -43,6 +44,9 @@ function App({ current }) {
           </Route>
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route path="/fave">
+            <Fave />
           </Route>
           {!current ? (
             <Redirect to="/" />
