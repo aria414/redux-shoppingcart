@@ -39,8 +39,14 @@ const Footer = () => {
 
       <div className="footer-column">
         <h3>CONTACT</h3>
-        <button>Message Us</button>
-        <button>Call Us</button>
+        <ul>
+          <li>
+            <button>Message Us</button>
+          </li>
+          <li>
+            <button>Call Us</button>
+          </li>
+        </ul>
       </div>
 
       <div className="social-media">
