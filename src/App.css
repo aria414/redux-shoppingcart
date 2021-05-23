@@ -27,12 +27,15 @@ GENERIC CSS / APP
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-weight: 400;
   line-height: 1.5;
   font-family: "Work Sans", sans-serif;
   color: #454649;
-  font-size: 16px;
 }
 
 h1,
@@ -107,7 +110,7 @@ input {
 
 .sale-banner {
   padding: 2%;
-  background: #f8c699;
+  background: #ffbdbd;
 }
 
 .advertise-banner {
