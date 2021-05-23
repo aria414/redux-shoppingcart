@@ -39,8 +39,10 @@ const Navbar = ({ cart, fave }) => {
             </Link>
           </li>
           <li>
-            <span className="material-icons">favorite</span>
-            {faveCount}
+            <Link to="/fave" className="nav-link">
+              <span className="material-icons">favorite</span>
+              {faveCount}
+            </Link>
           </li>
         </ul>
       </nav>
