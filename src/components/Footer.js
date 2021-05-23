@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-column">
-        <h2>ABOUT</h2>
+        <h3>ABOUT</h3>
         <ul>
           <li>
             <Link to="#">Careers</Link>
@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-column">
-        <h2>CUSTOMER SERVICE</h2>
+        <h3>CUSTOMER SERVICE</h3>
         <ul>
           <li>
             <Link to="#">Account</Link>
@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-column">
-        <h2>CONTACT</h2>
+        <h3>CONTACT</h3>
         <button>Message Us</button>
         <button>Call Us</button>
       </div>
