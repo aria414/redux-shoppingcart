@@ -77,6 +77,22 @@ const INITIAL_STATE = {
         "https://static.myfigurecollection.net/pics/figure/large/447232.jpg",
       faved: false,
     },
+    {
+      id: 5,
+      title: "Kawaii Musashi Plush from FGO",
+      description:
+        "Aniplex is releasing a very limited edition Fate/Grand Order Saber Musashi Miyamoto Cushion, as seen in Osakabehime's room.",
+      price: 46.95,
+      rating: 5,
+      attributes: {
+        width: 11.78,
+        depth: 6.55,
+        height: 6.55,
+        material: "Cotton",
+      },
+      image: "https://i.ebayimg.com/images/g/D~YAAOSwRn9d-IlA/s-l1600.jpg",
+      faved: false,
+    },
   ],
   cart: [],
   fave: [],
@@ -128,6 +144,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       const faveItem = state.products.find(
         (product) => product.id === action.payload.id
       );
+      faveItem.faved = true;
 
       // Check if Item is in fave array already. Returns true/false
       const inFave = state.fave.find((item) =>
@@ -141,10 +158,14 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       };
 
     case REMOVE_FROM_FAVE:
+      const rmfaveItem = state.products.find(
+        (product) => product.id === action.payload.id
+      );
+      rmfaveItem.faved = false;
       //Filter out array to show everything EXCLUDING item you selected.
       return {
         ...state,
-        cart: state.fave.filter((item) => item.id !== action.payload.id),
+        fave: state.fave.filter((item) => item.id !== action.payload.id),
       };
 
     case LOAD_CURRENT_ITEM:

@@ -5,7 +5,7 @@ const Fave = ({ fave }) => {
   console.log(fave);
 
   return (
-    <div className="faveorites">
+    <div className="fave-container">
       <h2>Fave Page</h2>
 
       <div>
