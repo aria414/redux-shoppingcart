@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //import actions
@@ -21,22 +21,42 @@ const OneProduct = ({
   //Build a string representing the attributes.
   const productAttr = `${productData.attributes.width}"W x ${productData.attributes.depth}"D x ${productData.attributes.width}"H. Made of: ${productData.attributes.material}`;
 
+  //set toggle for fave icon
+  const [faveClicked, setFaveClicked] = useState(false);
+  const [faveIcon, setFaveIcon] = useState("");
+
+  const handleFave = (id) => {
+    let isClicked = !faveClicked;
+    setFaveClicked(!faveClicked);
+
+    //the isClicked variable is to make the if statements easier to read.
+    //Otherwise I have to use if(!favedClicked) which is bad to read
+    if (isClicked === true) {
+      addToFave(id);
+    }
+    if (isClicked === false) {
+      removeFromFave(id);
+    }
+  };
+
+  useEffect(() => {
+    //First load the boolean to see if product was faved
+    setFaveClicked(productData.faved);
+
+    //If it was faved, display the filled heart icon. Else, display the line heart icon
+    if (productData.faved) setFaveIcon("las la-heart");
+    else setFaveIcon("lar la-heart");
+
+    //Re-render everytime productData.faved is changed
+  }, [productData.faved]);
+
+  console.log(faveIcon);
+
   return (
     <div className="product">
-      {productData.faved ? (
-        <div
-          className="fave-icons"
-          onClick={() => removeFromFave(productData.id)}
-        >
-          <span className="material-icons" style={{ color: "#ff7171" }}>
-            favorite
-          </span>
-        </div>
-      ) : (
-        <div className="fave-icons" onClick={() => addToFave(productData.id)}>
-          <span className="material-icons">favorite_border</span>
-        </div>
-      )}
+      <div className="fave-icons" onClick={() => handleFave(productData.id)}>
+        <i class={faveIcon}></i>
+      </div>
 
       <Link
         to={`product/${productData.id}`}
@@ -70,3 +90,20 @@ const mapDispatchToProps = (dispatch) => {
 };
 //Use Null since i'm not mapping states...
 export default connect(null, mapDispatchToProps)(OneProduct);
+
+/*
+
+      {productData.faved ? (
+        <div
+          className="fave-icons"
+          onClick={() => handleFave(productData.id)}
+        >
+          <i class={"las la-heart"}></i>
+        </div>
+      ) : (
+        <div className="fave-icons" onClick={() => handleFave(productData.id)}>
+          <i class="lar la-heart"></i>
+        </div>
+      )}
+
+*/

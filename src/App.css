@@ -196,18 +196,24 @@ input {
   right: 0;
 }
 
-.fave-icons .material-icons {
+.fave-icons i {
   color: white;
   font-size: 25px;
-  margin: 17%;
+  margin: 16%;
 }
 
-.product .fave-icons {
-  opacity: 0;
+i.las.la-heart {
+  color: #ff6e6e;
 }
 
-.product:hover .fave-icons {
-  opacity: 1;
+.fave-icons:hover .la-heart:before {
+  content: "\f004";
+  color: #ff6e6e;
+  font-weight: 900;
+}
+
+.fave-icons i:hover {
+  color: rgb(255, 174, 174);
   -webkit-transition: linear 200s, opacity 100ms;
   transition: linear 200s, opacity 100ms;
 }
