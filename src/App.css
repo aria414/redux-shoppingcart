@@ -188,8 +188,8 @@ input {
 }
 
 .fave-icons {
-  width: 40px;
-  height: 36px;
+  width: 34px;
+  height: 30px;
   background-color: rgba(0, 0, 0, 1);
   color: white;
   position: absolute;
@@ -198,8 +198,8 @@ input {
 
 .fave-icons i {
   color: white;
-  font-size: 25px;
-  margin: 16%;
+  font-size: 22px;
+  margin: 15%;
 }
 
 i.las.la-heart {
@@ -207,7 +207,6 @@ i.las.la-heart {
 }
 
 .fave-icons:hover .la-heart:before {
-  content: "\f004";
   color: #ff6e6e;
   font-weight: 900;
 }

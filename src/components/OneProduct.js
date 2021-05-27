@@ -41,10 +41,11 @@ const OneProduct = ({
 
   useEffect(() => {
     //First load the boolean to see if product was faved
-    setFaveClicked(productData.faved);
+    const isFaved = productData.faved;
+    setFaveClicked(isFaved);
 
     //If it was faved, display the filled heart icon. Else, display the line heart icon
-    if (productData.faved) setFaveIcon("las la-heart");
+    if (isFaved) setFaveIcon("las la-heart");
     else setFaveIcon("lar la-heart");
 
     //Re-render everytime productData.faved is changed
