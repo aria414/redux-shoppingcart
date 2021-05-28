@@ -6,11 +6,12 @@ const CLEAR_CART = "CLEAR_CART";
 const ADD_TO_FAVE = "ADD_TO_FAVE";
 const REMOVE_FROM_FAVE = "REMOVE_FROM_FAVE";
 
-export const addToCart = (itemID) => {
+export const addToCart = (itemID, qty) => {
   return {
     type: ADD_TO_CART,
     payload: {
       id: itemID,
+      qty,
     },
   };
 };

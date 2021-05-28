@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+//Connect the component with the states.
 import { connect } from "react-redux";
 //import actions
 import {
@@ -51,8 +52,6 @@ const OneProduct = ({
     //Re-render everytime productData.faved is changed
   }, [productData.faved]);
 
-  console.log(faveIcon);
-
   return (
     <div className="product">
       <div className="fave-icons" onClick={() => handleFave(productData.id)}>
@@ -75,7 +74,7 @@ const OneProduct = ({
           style={{ "--rating": productData.rating }}
           aria-label={`Rating of this product is ${productData.rating} out of 5.`}
         ></div>
-        <span>(278 Reviews)</span>
+        <span>(278)</span>
       </div>
     </div>
   );
@@ -91,20 +90,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 //Use Null since i'm not mapping states...
 export default connect(null, mapDispatchToProps)(OneProduct);
-
-/*
-
-      {productData.faved ? (
-        <div
-          className="fave-icons"
-          onClick={() => handleFave(productData.id)}
-        >
-          <i class={"las la-heart"}></i>
-        </div>
-      ) : (
-        <div className="fave-icons" onClick={() => handleFave(productData.id)}>
-          <i class="lar la-heart"></i>
-        </div>
-      )}
-
-*/

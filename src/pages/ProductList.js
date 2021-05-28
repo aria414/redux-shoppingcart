@@ -8,11 +8,14 @@ import OneProduct from "../components/OneProduct";
 //{products} Destructured from mapStateToProps
 const ProductList = ({ products }) => {
   return (
-    <div className="itemList">
-      {products.map((item) => {
-        return <OneProduct key={item.id} productData={item} />;
-      })}
-    </div>
+    <sectopm>
+      <h2>All Products</h2>
+      <div className="item-list">
+        {products.map((item) => {
+          return <OneProduct key={item.id} productData={item} />;
+        })}
+      </div>
+    </sectopm>
   );
 };
 

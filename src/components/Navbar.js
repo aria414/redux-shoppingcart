@@ -10,7 +10,7 @@ const Navbar = ({ cart, fave }) => {
   useEffect(() => {
     let count = 0;
     cart.forEach((item) => {
-      count += item.qty;
+      count += parseInt(item.qty);
     });
 
     let faveCount = 0;

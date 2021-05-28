@@ -68,7 +68,7 @@ a:hover {
   color: #a04661;
 }
 
-.itemList {
+.item-list {
   width: 100%;
   min-height: 300px;
   margin: 30px auto;
@@ -143,12 +143,39 @@ input {
   margin: 5% 0;
 }
 
-.itemList {
+.item-list {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
 }
 
+.fave-icons {
+  width: 34px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  position: absolute;
+  right: 0;
+}
+
+.fave-icons i {
+  color: white;
+  font-size: 22px;
+  margin: 15%;
+}
+
+i.las.la-heart {
+  color: #ff6e6e;
+}
+
+.fave-icons:hover .la-heart:before {
+  color: #ff6e6e;
+  font-weight: 900;
+}
+
+/* ======================================
+SINGLE ITEM COMPONENT
+====================================== */
 .product {
   width: 45%;
   margin: 0 0 10% 4%;
@@ -180,41 +207,11 @@ input {
   color: #8a8a8a;
 }
 
-.add-item,
-.view-item {
+#add-item,
+#fave-item {
   max-width: 100px;
   max-height: 50px;
   min-height: 30px;
-}
-
-.fave-icons {
-  width: 34px;
-  height: 30px;
-  background-color: rgba(0, 0, 0, 1);
-  color: white;
-  position: absolute;
-  right: 0;
-}
-
-.fave-icons i {
-  color: white;
-  font-size: 22px;
-  margin: 15%;
-}
-
-i.las.la-heart {
-  color: #ff6e6e;
-}
-
-.fave-icons:hover .la-heart:before {
-  color: #ff6e6e;
-  font-weight: 900;
-}
-
-.fave-icons i:hover {
-  color: rgb(255, 174, 174);
-  -webkit-transition: linear 200s, opacity 100ms;
-  transition: linear 200s, opacity 100ms;
 }
 
 /* --------- 

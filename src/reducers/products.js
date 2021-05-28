@@ -111,7 +111,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         item.id === action.payload.id ? true : false
       );
 
-      //If in cart, adjust quantity
+      //If in cart, adjust quantity. USE PARSEINT BC WE HAVE PAYLOAD AS KEY/VALUE PAIRS
       //If not in cart, return the state spreaded with the new state which contains the item.
       //Remember cart: is a property that takes array of items. So we are mapping items to the cart.
       return {
@@ -119,10 +119,10 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         cart: inCart
           ? state.cart.map((item) =>
               item.id === action.payload.id
-                ? { ...item, qty: item.qty + 1 }
+                ? { ...item, qty: item.qty + parseInt(action.payload.qty) }
                 : item
             )
-          : [...state.cart, { ...item, qty: 1 }],
+          : [...state.cart, { ...item, qty: parseInt(action.payload.qty) }],
       };
     case REMOVE_FROM_CART:
       //Filter out array to show everything EXCLUDING item you selected.

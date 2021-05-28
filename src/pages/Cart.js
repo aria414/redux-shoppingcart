@@ -15,11 +15,16 @@ const Cart = ({ cart, clearCart }) => {
       items += item.qty;
       price += item.qty * item.price;
 
-      setTotalPrice(price);
+      setTotalPrice(price.toFixed(2));
       setTotalItems(items);
     });
   }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
 
+  const isCleared = () => {
+    clearCart();
+    setTotalItems(0);
+    setTotalPrice(0);
+  };
   return (
     <div className="cart">
       <h2>Cart Page</h2>
@@ -34,7 +39,7 @@ const Cart = ({ cart, clearCart }) => {
       <p>TOTAL: {totalItems}</p>
       <p>PICE: {totalPrice}</p>
       <button>Proceed to Checkout</button>
-      <button onClick={() => clearCart()}>Clear Cart</button>
+      <button onClick={() => isCleared()}>Clear Cart</button>
     </div>
   );
 };
