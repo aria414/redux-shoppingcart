@@ -68,9 +68,9 @@ const SingleItem = ({
     <div className="product">
       <img src={current.image} alt={current.title} />
       <div className="product-details">
-        <p>{current.title}</p>
+        <h2>{current.title}</h2>
         <p>{current.description}</p>
-        <p>$ {current.price}</p>
+        <h3>$ {current.price}</h3>
 
         <div className="product-btns">
           <div>
