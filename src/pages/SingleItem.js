@@ -9,6 +9,7 @@ import {
   adjustItemQty,
 } from "../actions";
 
+//=========== FUNCTIONAL COMPONENT START =============
 const SingleItem = ({
   current,
   addToCart,
@@ -65,14 +66,35 @@ const SingleItem = ({
   }, [current.faved, qtyVal]);
 
   return (
-    <div className="product">
+    <section className="single-item">
       <img src={current.image} alt={current.title} />
-      <div className="product-details">
-        <h2>{current.title}</h2>
-        <p>{current.description}</p>
-        <h3>$ {current.price}</h3>
 
-        <div className="product-btns">
+      <div className="item-summary">
+        <h2>{current.title}</h2>
+        <h3>$ {current.price}</h3>
+        <div
+          className="Stars"
+          style={{ "--rating": current.rating }}
+          aria-label={`Rating of this product is ${current.rating} out of 5.`}
+        ></div>
+        <span>(278)</span>
+        <p>IN STOCK</p>
+        <span>Ship To - 12345 NY - Free</span>
+
+        <div className="quick-specs">
+          <div className="attr-key">
+            {Object.keys(current.attributes).map((elem) => (
+              <p>{elem}</p>
+            ))}
+          </div>
+          <div className="attr-value">
+            {Object.values(current.attributes).map((elem) => (
+              <p>{elem}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="item-btns">
           <div>
             <label htmlFor="qty">Qty</label>
             <input
@@ -97,7 +119,83 @@ const SingleItem = ({
           </button>
         </div>
       </div>
-    </div>
+
+      <div className="item-details">
+        <div id="itmdet-descr">
+          <h2>DESCRIPTION</h2>
+          <p>{current.description}</p>
+        </div>
+
+        <div id="itmdet-specs">
+          <h2>SPECIFICATION</h2>
+          <div className="attr-key">
+            {Object.keys(current.attributes).map((elem) => (
+              <p>{elem}</p>
+            ))}
+          </div>
+          <div className="attr-value">
+            {Object.values(current.attributes).map((elem) => (
+              <p>{elem}</p>
+            ))}
+          </div>
+        </div>
+
+        <div id="allitem-reviews">
+          <h2>REVIEWS</h2>
+          <div className="item-review">
+            <hr />
+            <h4>Love this item!</h4>
+            <div
+              className="Stars"
+              style={{ "--rating": "5" }}
+              aria-label="Rating of this product is 5 out of 5"
+            ></div>
+            <span>01/25/2021</span>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur magni dolores eos qui ratione
+              voluptatem sequi nesciunt.
+            </p>
+            <p>Emiya Shirou</p>
+            <p>Kyoto, Japan</p>
+          </div>
+          <div className="item-review">
+            <hr />
+            <h4>Best for fans</h4>
+            <div
+              className="Stars"
+              style={{ "--rating": "5" }}
+              aria-label="Rating of this product is 5 out of 5"
+            ></div>
+            <span>01/25/2021</span>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur magni dolores eos qui ratione
+              voluptatem sequi nesciunt.
+            </p>
+            <p>Emiya Shirou</p>
+            <p>Kyoto, Japan</p>
+          </div>
+          <div className="item-review">
+            <hr />
+            <h4>Cichue notice me</h4>
+            <div
+              className="Stars"
+              style={{ "--rating": "3.5" }}
+              aria-label="Rating of this product is 3.5 out of 5"
+            ></div>
+            <span>01/25/2021</span>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur magni dolores eos qui ratione
+              voluptatem sequi nesciunt.
+            </p>
+            <p>Emiya Shirou</p>
+            <p>Kyoto, Japan</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

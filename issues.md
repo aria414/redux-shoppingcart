@@ -10,3 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Sidenav.init(elems, {});
 });
 ```
+
+```
+/*--- MATERIALIZE CSS -- for responsive nav. Adjusting screen size
+@media only screen and (max-width: 992px) {
+  .hide-on-med-and-down {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  .hide-on-med-and-down {
+    display: none !important;
+  }
+}
+*/
+```

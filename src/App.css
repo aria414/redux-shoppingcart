@@ -68,12 +68,6 @@ a:hover {
   color: #a04661;
 }
 
-.item-list {
-  width: 100%;
-  min-height: 300px;
-  margin: 30px auto;
-}
-
 /* ======================================
 PRODUCT LISTING 
 ====================================== */
@@ -143,7 +137,7 @@ input {
   margin: 5% 0;
 }
 
-.item-list {
+.product-list {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -168,13 +162,13 @@ i.las.la-heart {
   color: #ff6e6e;
 }
 
-.fave-icons:hover .la-heart:before {
+/* .fave-icons:hover .la-heart:before {
   color: #ff6e6e;
   font-weight: 900;
-}
+} */
 
 /* ======================================
-SINGLE ITEM COMPONENT
+ONE PRODUCT COMPONENT
 ====================================== */
 .product {
   width: 45%;
@@ -214,11 +208,11 @@ SINGLE ITEM COMPONENT
   min-height: 30px;
 }
 
-/* --------- 
+/* ------------------
 STAR REVIEW ICONS SECTION 
 Borrowed from the css-tricks website:
  https://css-tricks.com/five-methods-for-five-star-ratings/
-------- */
+---------------- */
 :root {
   --star-size: 1em;
   --star-color: #c7c7c7;
@@ -247,19 +241,14 @@ Borrowed from the css-tricks website:
   -webkit-text-fill-color: transparent;
   font-size: 400;
 }
-/*--- MATERIALIZE CSS 
-@media only screen and (max-width: 992px) {
-  .hide-on-med-and-down {
-    display: block !important;
-  }
-}
 
-@media only screen and (max-width: 715px) {
-  .hide-on-med-and-down {
-    display: none !important;
-  }
-} 
-*/
+/* ======================================
+SINGLE ITEM COMPONENT
+====================================== */
+
+.single-item {
+  padding: 3%;
+}
 
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
