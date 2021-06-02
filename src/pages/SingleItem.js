@@ -157,8 +157,8 @@ const SingleItem = ({
             <h4>Love this item!</h4>
             <div
               className="Stars"
-              style={{ "--rating": "5" }}
-              aria-label="Rating of this product is 5 out of 5"
+              style={{ "--rating": current.rating }}
+              aria-label={`Rating of this product is ${current.rating} out of 5.`}
             ></div>
             <span>01/25/2021</span>
             <p>

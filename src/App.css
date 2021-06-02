@@ -196,7 +196,6 @@ ONE PRODUCT COMPONENT
   margin: 10px 0;
 }
 .product-details span {
-  margin-left: 8px;
   font-size: 0.8em;
   color: #8a8a8a;
 }
@@ -225,7 +224,7 @@ Borrowed from the css-tricks website:
   font-size: var(--star-size);
   font-family: "Roboto", serif;
   line-height: 1;
-  margin-top: 8px;
+  margin: 8px 8px 0 0;
 }
 
 .Stars:before {
@@ -253,9 +252,6 @@ SINGLE ITEM COMPONENT
 .single-item img {
   width: 100%;
   border: 1px solid grey;
-}
-.single-item div {
-  margin: 2% 0;
 }
 
 .item-summary h2 {
@@ -286,8 +282,7 @@ SINGLE ITEM COMPONENT
   margin-left: auto;
 }
 
-.item-ratings > span {
-  margin-left: 8px;
+.item-ratings span {
   color: #006faf;
 }
 /*  ------------------------
