@@ -72,16 +72,27 @@ const SingleItem = ({
       <div className="item-summary">
         <h2>{current.title}</h2>
         <h3>$ {current.price}</h3>
-        <div
-          className="Stars"
-          style={{ "--rating": current.rating }}
-          aria-label={`Rating of this product is ${current.rating} out of 5.`}
-        ></div>
-        <span>(278)</span>
-        <p>IN STOCK</p>
-        <span>Ship To - 12345 NY - Free</span>
 
-        <div className="quick-specs">
+        <div className="item-ratings">
+          <div
+            className="Stars"
+            style={{ "--rating": current.rating }}
+            aria-label={`Rating of this product is ${current.rating} out of 5.`}
+          ></div>
+          <span>(278)</span>
+        </div>
+
+        <div className="item-summary-ship">
+          <span>
+            IN STOCK
+            <i class="las la-check-circle"></i>
+          </span>
+
+          <span>Ship To - 12345 NY - Free</span>
+        </div>
+
+        <div className="item-quickspecs">
+          <h4>QUICK SPECS</h4>
           <div className="attr-key">
             {Object.keys(current.attributes).map((elem) => (
               <p>{elem}</p>
@@ -93,7 +104,6 @@ const SingleItem = ({
             ))}
           </div>
         </div>
-
         <div className="item-btns">
           <div>
             <label htmlFor="qty">Qty</label>
@@ -158,6 +168,7 @@ const SingleItem = ({
             </p>
             <p>Emiya Shirou</p>
             <p>Kyoto, Japan</p>
+            <i class="las la-thumbs-up"></i>
           </div>
           <div className="item-review">
             <hr />
@@ -175,6 +186,7 @@ const SingleItem = ({
             </p>
             <p>Emiya Shirou</p>
             <p>Kyoto, Japan</p>
+            <i class="las la-thumbs-up"></i>
           </div>
           <div className="item-review">
             <hr />
@@ -190,8 +202,9 @@ const SingleItem = ({
               aut fugit, sed quia consequuntur magni dolores eos qui ratione
               voluptatem sequi nesciunt.
             </p>
-            <p>Emiya Shirou</p>
+            <hp>Emiya Shirou</hp>
             <p>Kyoto, Japan</p>
+            <i class="las la-thumbs-up"></i>
           </div>
         </div>
       </div>

@@ -247,9 +247,47 @@ SINGLE ITEM COMPONENT
 ====================================== */
 
 .single-item {
-  padding: 3%;
+  margin: 0 8%;
 }
 
+.single-item img {
+  width: 100%;
+  border: 1px solid grey;
+}
+.single-item div {
+  margin: 2% 0;
+}
+
+.item-summary h2 {
+  font-size: 1.5em;
+}
+
+.item-summary h3 {
+  font-size: 1.8em;
+  color: #03a800;
+}
+
+.item-summary-ship {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-summary-ship i {
+  font-size: 1.6em;
+  color: #006faf;
+  vertical-align: bottom;
+}
+
+.item-summary-ship span:nth-child(3) {
+  font-size: 0.9em;
+  margin-left: auto;
+}
+
+.item-ratings span,
+.item-summary-ship i {
+  margin-left: 10px;
+}
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
 https://github.com/dev-ggaurav/responsive-hamburger-tutorial
