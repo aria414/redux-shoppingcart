@@ -60,7 +60,7 @@ li {
 }
 
 a {
-  color: #000000;
+  color: black;
   text-decoration: none;
 }
 
@@ -125,7 +125,7 @@ input {
 
 .material-icons {
   font-size: 24px;
-  color: #000000;
+  color: black;
 }
 
 .sale-banner {
@@ -176,7 +176,7 @@ input {
 .fave-icons {
   width: 34px;
   height: 30px;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: black;
   color: white;
   position: absolute;
   right: 0;
@@ -314,6 +314,7 @@ SINGLE ITEM COMPONENT
 }
 .collapse {
   background-color: #ffffff;
+  border-bottom: 1px solid #929292;
 }
 
 .accordian-open {
