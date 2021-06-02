@@ -352,6 +352,7 @@ SINGLE ITEM COMPONENT
 }
 .item-ratings span {
   color: #006faf;
+  margin-left: 5px;
 }
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
