@@ -68,6 +68,36 @@ a:hover {
   color: #a04661;
 }
 
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  margin-top: 10px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-top: 5px;
+}
+
 /* ======================================
 PRODUCT LISTING 
 ====================================== */
@@ -255,13 +285,45 @@ SINGLE ITEM COMPONENT
 }
 
 .item-summary h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .item-summary h3 {
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: #03a800;
 }
+
+.details-accord {
+  padding: 3px 15px;
+  text-align: center;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.details-accord h3 {
+  font-size: 1.3em;
+  color: #454649;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.expand {
+  background-color: #f3f3f3;
+}
+.collapse {
+  background-color: #ffffff;
+}
+
+/* .allitem-reviews {
+  height: 600px;
+  transition: height 0.25s ease-in;
+} */
+
+/* height: 0px;
+  transition: height 0.15s ease-out;
+  overflow: hidden; */
 
 .item-summary-ship {
   display: flex;
@@ -282,6 +344,9 @@ SINGLE ITEM COMPONENT
   margin-left: auto;
 }
 
+.item-ratings {
+  margin-bottom: 10px;
+}
 .item-ratings span {
   color: #006faf;
 }

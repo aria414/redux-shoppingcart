@@ -20,6 +20,7 @@ const SingleItem = ({
   //set toggle for fave icon
   const [faveClicked, setFaveClicked] = useState(false);
   const [faveIcon, setFaveIcon] = useState("");
+  const [qtyVal, setQtyVal] = useState(1);
 
   const handleFave = (id) => {
     let isClicked = !faveClicked;
@@ -35,8 +36,6 @@ const SingleItem = ({
     }
   };
 
-  const [qtyVal, setQtyVal] = useState(1);
-
   const onChangeHandler = (e) => {
     let inputval = e.target.value;
     setQtyVal(inputval);
@@ -47,6 +46,27 @@ const SingleItem = ({
     console.log("qtyVal value after click: ", val);
     adjustItemQty(id, val);
     addToCart(id, val);
+  };
+
+  //Toggle the state of the accordian divs. If you click on quickspecs div, it sends 'quickspecs' back to function as an ID and use ID to target the key of this state object
+  //If quickspecs was clicked, change its state to true. And in HTML if it is true, swap class.
+  const [accordian, setAccordian] = useState({
+    quickspecs: false,
+    desc: false,
+    specs: false,
+    reviews: false,
+  });
+
+  //Set toggle for accordian in product details
+  const toggleAccord = (id) => {
+    let val = !accordian[id];
+
+    setAccordian({
+      ...accordian,
+      [id]: val,
+    });
+
+    console.log("statei is: ", accordian);
   };
 
   useEffect(() => {
@@ -91,8 +111,18 @@ const SingleItem = ({
           <span>Ship To - 12345 NY - Free</span>
         </div>
 
+        <div
+          className={
+            accordian.quickspecs
+              ? "details-accord expand"
+              : "details-accord collapse"
+          }
+          onClick={() => toggleAccord("quickspecs")}
+        >
+          <h3>QUICK SPECS</h3>
+          <i class={accordian.quickspecs ? "arrow up" : "arrow down"}></i>
+        </div>
         <div className="item-quickspecs">
-          <h4>QUICK SPECS</h4>
           <div className="attr-key">
             {Object.keys(current.attributes).map((elem) => (
               <p>{elem}</p>
@@ -130,14 +160,32 @@ const SingleItem = ({
         </div>
       </div>
 
+      <div
+        className={
+          accordian.desc ? "details-accord expand" : "details-accord collapse"
+        }
+        onClick={() => toggleAccord("desc")}
+      >
+        <h3>DESCRIPTION</h3>
+        <i class={accordian.desc ? "arrow up" : "arrow down"}></i>
+      </div>
       <div className="item-details">
         <div id="itmdet-descr">
-          <h2>DESCRIPTION</h2>
           <p>{current.description}</p>
         </div>
 
+        <div
+          className={
+            accordian.specs
+              ? "details-accord expand"
+              : "details-accord collapse"
+          }
+          onClick={() => toggleAccord("specs")}
+        >
+          <h3>SPECIFICATION</h3>
+          <i class={accordian.specs ? "arrow up" : "arrow down"}></i>
+        </div>
         <div id="itmdet-specs">
-          <h2>SPECIFICATION</h2>
           <div className="attr-key">
             {Object.keys(current.attributes).map((elem) => (
               <p>{elem}</p>
@@ -150,8 +198,18 @@ const SingleItem = ({
           </div>
         </div>
 
+        <div
+          className={
+            accordian.reviews
+              ? "details-accord expand"
+              : "details-accord collapse"
+          }
+          onClick={() => toggleAccord("reviews")}
+        >
+          <h3>REVIEWS</h3>
+          <i class={accordian.reviews ? "arrow up" : "arrow down"}></i>
+        </div>
         <div id="allitem-reviews">
-          <h2>REVIEWS</h2>
           <div className="item-review">
             <hr />
             <h4>Love this item!</h4>
