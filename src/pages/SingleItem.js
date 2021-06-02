@@ -88,7 +88,6 @@ const SingleItem = ({
   return (
     <section className="single-item">
       <img src={current.image} alt={current.title} />
-
       <div className="item-summary">
         <h2>{current.title}</h2>
         <h3>$ {current.price}</h3>
@@ -122,7 +121,11 @@ const SingleItem = ({
           <h3>QUICK SPECS</h3>
           <i class={accordian.quickspecs ? "arrow up" : "arrow down"}></i>
         </div>
-        <div className="item-quickspecs">
+        <div
+          className={
+            accordian.quickspecs ? "accordian-open" : "accordian-close"
+          }
+        >
           <div className="attr-key">
             {Object.keys(current.attributes).map((elem) => (
               <p>{elem}</p>
@@ -159,18 +162,17 @@ const SingleItem = ({
           </button>
         </div>
       </div>
-
-      <div
-        className={
-          accordian.desc ? "details-accord expand" : "details-accord collapse"
-        }
-        onClick={() => toggleAccord("desc")}
-      >
-        <h3>DESCRIPTION</h3>
-        <i class={accordian.desc ? "arrow up" : "arrow down"}></i>
-      </div>
       <div className="item-details">
-        <div id="itmdet-descr">
+        <div
+          className={
+            accordian.desc ? "details-accord expand" : "details-accord collapse"
+          }
+          onClick={() => toggleAccord("desc")}
+        >
+          <h3>DESCRIPTION</h3>
+          <i class={accordian.desc ? "arrow up" : "arrow down"}></i>
+        </div>
+        <div className={accordian.desc ? "accordian-open" : "accordian-close"}>
           <p>{current.description}</p>
         </div>
 
@@ -185,7 +187,7 @@ const SingleItem = ({
           <h3>SPECIFICATION</h3>
           <i class={accordian.specs ? "arrow up" : "arrow down"}></i>
         </div>
-        <div id="itmdet-specs">
+        <div className={accordian.specs ? "accordian-open" : "accordian-close"}>
           <div className="attr-key">
             {Object.keys(current.attributes).map((elem) => (
               <p>{elem}</p>
@@ -209,7 +211,9 @@ const SingleItem = ({
           <h3>REVIEWS</h3>
           <i class={accordian.reviews ? "arrow up" : "arrow down"}></i>
         </div>
-        <div id="allitem-reviews">
+        <div
+          className={accordian.reviews ? "accordian-open" : "accordian-close"}
+        >
           <div className="item-review">
             <hr />
             <h4>Love this item!</h4>
@@ -266,6 +270,7 @@ const SingleItem = ({
           </div>
         </div>
       </div>
+      {/*End of item-details div*/}
     </section>
   );
 };
