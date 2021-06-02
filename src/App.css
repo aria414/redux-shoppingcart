@@ -271,11 +271,13 @@ SINGLE ITEM COMPONENT
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .item-summary-ship i {
   font-size: 1.6em;
   color: #006faf;
+  margin-left: 8px;
   vertical-align: bottom;
 }
 
@@ -284,9 +286,9 @@ SINGLE ITEM COMPONENT
   margin-left: auto;
 }
 
-.item-ratings span,
-.item-summary-ship i {
-  margin-left: 10px;
+.item-ratings > span {
+  margin-left: 8px;
+  color: #006faf;
 }
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo

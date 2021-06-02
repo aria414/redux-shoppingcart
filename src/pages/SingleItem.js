@@ -79,14 +79,14 @@ const SingleItem = ({
             style={{ "--rating": current.rating }}
             aria-label={`Rating of this product is ${current.rating} out of 5.`}
           ></div>
-          <span>(278)</span>
+          <span>(278 Reviews)</span>
         </div>
 
         <div className="item-summary-ship">
-          <span>
+          <p>
             IN STOCK
             <i class="las la-check-circle"></i>
-          </span>
+          </p>
 
           <span>Ship To - 12345 NY - Free</span>
         </div>
