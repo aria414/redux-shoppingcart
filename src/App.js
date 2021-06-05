@@ -1,3 +1,4 @@
+import "./reset.css";
 import "./App.css";
 //Component imports...
 import Navbar from "./components/Navbar";
@@ -29,7 +30,7 @@ function App({ current }) {
           code SHIPFREE at checkout for shipping discount
         </div>
         <div className="advertise-banner">
-          <img src={adbanner} alt="Sale banner image" />
+          <img src={adbanner} alt="Sale banner" />
 
           <h2>SHOP HOME DECOR</h2>
           <p>20% off on all clearance items</p>

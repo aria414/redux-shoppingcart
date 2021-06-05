@@ -104,28 +104,19 @@ const SingleItem = ({
         <div className="item-summary-ship">
           <p>
             IN STOCK
-            <i class="las la-check-circle"></i>
+            <i className="las la-check-circle"></i>
           </p>
 
           <span>Ship To - 12345 NY - Free</span>
         </div>
 
         <div
-          className={
-            accordian.quickspecs
-              ? "details-accord expand"
-              : "details-accord collapse"
-          }
+          className="details-accord expand"
           onClick={() => toggleAccord("quickspecs")}
         >
           <h3>QUICK SPECS</h3>
-          <i class={accordian.quickspecs ? "arrow up" : "arrow down"}></i>
         </div>
-        <div
-          className={
-            accordian.quickspecs ? "accordian-open" : "accordian-close"
-          }
-        >
+        <div className="accordian-open">
           <div className="attr-key">
             {Object.keys(current.attributes).map((elem) => (
               <p>{elem}</p>
@@ -158,7 +149,7 @@ const SingleItem = ({
           </button>
 
           <button id="fave-item" onClick={() => handleFave(current.id)}>
-            <i class={faveIcon}></i>
+            <i className={faveIcon}></i>
           </button>
         </div>
       </div>
@@ -170,7 +161,7 @@ const SingleItem = ({
           onClick={() => toggleAccord("desc")}
         >
           <h3>DESCRIPTION</h3>
-          <i class={accordian.desc ? "arrow up" : "arrow down"}></i>
+          <i className={accordian.desc ? "arrow up" : "arrow down"}></i>
         </div>
         <div className={accordian.desc ? "accordian-open" : "accordian-close"}>
           <p>{current.description}</p>
@@ -185,7 +176,7 @@ const SingleItem = ({
           onClick={() => toggleAccord("specs")}
         >
           <h3>SPECIFICATION</h3>
-          <i class={accordian.specs ? "arrow up" : "arrow down"}></i>
+          <i className={accordian.specs ? "arrow up" : "arrow down"}></i>
         </div>
         <div className={accordian.specs ? "accordian-open" : "accordian-close"}>
           <div className="attr-key">
@@ -209,7 +200,7 @@ const SingleItem = ({
           onClick={() => toggleAccord("reviews")}
         >
           <h3>REVIEWS</h3>
-          <i class={accordian.reviews ? "arrow up" : "arrow down"}></i>
+          <i className={accordian.reviews ? "arrow up" : "arrow down"}></i>
         </div>
         <div
           className={accordian.reviews ? "accordian-open" : "accordian-close"}
@@ -230,7 +221,7 @@ const SingleItem = ({
             </p>
             <p>Emiya Shirou</p>
             <p>Kyoto, Japan</p>
-            <i class="las la-thumbs-up"></i>
+            <i className="las la-thumbs-up"></i>
           </div>
           <div className="item-review">
             <hr />
@@ -248,7 +239,7 @@ const SingleItem = ({
             </p>
             <p>Emiya Shirou</p>
             <p>Kyoto, Japan</p>
-            <i class="las la-thumbs-up"></i>
+            <i className="las la-thumbs-up"></i>
           </div>
           <div className="item-review">
             <hr />
@@ -264,9 +255,9 @@ const SingleItem = ({
               aut fugit, sed quia consequuntur magni dolores eos qui ratione
               voluptatem sequi nesciunt.
             </p>
-            <hp>Emiya Shirou</hp>
+            <p>Emiya Shirou</p>
             <p>Kyoto, Japan</p>
-            <i class="las la-thumbs-up"></i>
+            <i className="las la-thumbs-up"></i>
           </div>
         </div>
       </div>

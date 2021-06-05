@@ -55,7 +55,7 @@ const OneProduct = ({
   return (
     <div className="product">
       <div className="fave-icons" onClick={() => handleFave(productData.id)}>
-        <i class={faveIcon}></i>
+        <i className={faveIcon}></i>
       </div>
 
       <Link

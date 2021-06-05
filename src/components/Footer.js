@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -50,11 +50,11 @@ const Footer = () => {
       </div>
 
       <div className="social-media">
-        <i class="lab la-facebook-f"></i>
-        <i class="lab la-twitter"></i>
-        <i class="lab la-instagram"></i>
-        <i class="lab la-youtube"></i>
-        <i class="lab la-pinterest"></i>
+        <i className="lab la-facebook-f"></i>
+        <i className="lab la-twitter"></i>
+        <i className="lab la-instagram"></i>
+        <i className="lab la-youtube"></i>
+        <i className="lab la-pinterest"></i>
       </div>
 
       <p className="footnotes">
