@@ -268,7 +268,6 @@ Borrowed from the css-tricks website:
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 400;
 }
 
 /* ======================================
@@ -353,6 +352,7 @@ SINGLE ITEM COMPONENT
 .item-ratings span {
   color: #006faf;
   margin-left: 5px;
+  font-size: 0.9em;
 }
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
