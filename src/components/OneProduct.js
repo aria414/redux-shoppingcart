@@ -66,9 +66,9 @@ const OneProduct = ({
       </Link>
 
       <div className="product-details">
-        <h4>{productData.title}</h4>
+        <h3>{productData.title}</h3>
         <p>Attributes: {productAttr}</p>
-        <h3>${productData.price}</h3>
+        <h4>${productData.price}</h4>
         <div
           className="Stars"
           style={{ "--rating": productData.rating }}

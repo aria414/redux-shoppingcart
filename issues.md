@@ -34,4 +34,9 @@ a:hover {
   color: #a04661;
 }
 
+button:hover {
+  background-color: rgb(87, 207, 157);
+  cursor: pointer;
+}
+
 ```

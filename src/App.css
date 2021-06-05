@@ -105,10 +105,6 @@ button {
   background-color: white;
   border: 1px solid #929292;
 }
-button:hover {
-  background-color: rgb(87, 207, 157);
-  cursor: pointer;
-}
 
 input {
   border: 1px solid #929292;
@@ -207,11 +203,11 @@ ONE PRODUCT COMPONENT
   min-height: 170px;
   object-fit: cover;
 }
-.product-details h4 {
+.product-details h3 {
   font-size: 1.1em;
 }
 
-.product-details h3 {
+.product-details h4 {
   font-size: 1.2em;
   color: #03a800;
 }
@@ -224,13 +220,6 @@ ONE PRODUCT COMPONENT
 .product-details span {
   font-size: 0.8em;
   color: #8a8a8a;
-}
-
-#add-item,
-#fave-item {
-  max-width: 100px;
-  max-height: 50px;
-  min-height: 30px;
 }
 
 /* ------------------
@@ -279,11 +268,11 @@ SINGLE ITEM COMPONENT
   border: 1px solid grey;
 }
 
-.item-summary h2 {
+.item-summary h3 {
   font-size: 1.4em;
 }
 
-.item-summary h3 {
+.item-summary h4 {
   font-size: 1.6em;
   color: #03a800;
 }
@@ -327,6 +316,7 @@ SINGLE ITEM COMPONENT
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 2% 0;
 }
 
 .item-summary-ship i {
@@ -341,6 +331,31 @@ SINGLE ITEM COMPONENT
   margin-left: auto;
 }
 
+.item-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.item-btns input {
+  width: 30%;
+  height: 35px;
+}
+#add-item {
+  width: 40%;
+  height: 35px;
+  font-size: 1.1em;
+  background: #002866;
+  color: white;
+  border: none;
+}
+
+#fave-item {
+  width: 15%;
+  height: 35px;
+  font-size: 1.7em;
+}
+#fave-item i {
+  color: #a04661;
+}
 .item-ratings {
   margin-bottom: 10px;
 }

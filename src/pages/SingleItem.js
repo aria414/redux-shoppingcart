@@ -89,8 +89,8 @@ const SingleItem = ({
     <section className="single-item">
       <img src={current.image} alt={current.title} />
       <div className="item-summary">
-        <h2>{current.title}</h2>
-        <h3>$ {current.price}</h3>
+        <h3>{current.title}</h3>
+        <h4>$ {current.price}</h4>
 
         <div
           className="Stars"
@@ -129,17 +129,14 @@ const SingleItem = ({
           </div>
         </div>
         <div className="item-btns">
-          <div>
-            <label htmlFor="qty">Qty</label>
-            <input
-              min="1"
-              type="number"
-              id="qty"
-              name="qty"
-              value={qtyVal}
-              onChange={onChangeHandler}
-            />
-          </div>
+          <input
+            min="1"
+            type="number"
+            id="qty"
+            name="qty"
+            value={qtyVal}
+            onChange={onChangeHandler}
+          />
 
           <button
             id="add-item"
