@@ -26,3 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 */
 ```
+
+-Mobile don't need hover
+
+```
+a:hover {
+  color: #a04661;
+}
+
+```

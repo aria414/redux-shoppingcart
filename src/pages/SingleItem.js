@@ -92,14 +92,12 @@ const SingleItem = ({
         <h2>{current.title}</h2>
         <h3>$ {current.price}</h3>
 
-        <div className="item-ratings">
-          <div
-            className="Stars"
-            style={{ "--rating": current.rating }}
-            aria-label={`Rating of this product is ${current.rating} out of 5.`}
-          ></div>
-          <span>(278 Reviews)</span>
-        </div>
+        <div
+          className="Stars"
+          style={{ "--rating": current.rating }}
+          aria-label={`Rating of this product is ${current.rating} out of 5.`}
+        ></div>
+        <span>(278 Reviews)</span>
 
         <div className="item-summary-ship">
           <p>
@@ -117,15 +115,17 @@ const SingleItem = ({
           <h3>QUICK SPECS</h3>
         </div>
         <div className="accordian-open">
-          <div className="attr-key">
-            {Object.keys(current.attributes).map((elem) => (
-              <p>{elem}</p>
-            ))}
-          </div>
-          <div className="attr-value">
-            {Object.values(current.attributes).map((elem) => (
-              <p>{elem}</p>
-            ))}
+          <div className="attributes">
+            <div className="attr-key">
+              {Object.keys(current.attributes).map((elem) => (
+                <p>{elem}</p>
+              ))}
+            </div>
+            <div className="attr-value">
+              {Object.values(current.attributes).map((elem) => (
+                <p>{elem}</p>
+              ))}
+            </div>
           </div>
         </div>
         <div className="item-btns">
@@ -179,15 +179,17 @@ const SingleItem = ({
           <i className={accordian.specs ? "arrow up" : "arrow down"}></i>
         </div>
         <div className={accordian.specs ? "accordian-open" : "accordian-close"}>
-          <div className="attr-key">
-            {Object.keys(current.attributes).map((elem) => (
-              <p>{elem}</p>
-            ))}
-          </div>
-          <div className="attr-value">
-            {Object.values(current.attributes).map((elem) => (
-              <p>{elem}</p>
-            ))}
+          <div className="attributes">
+            <div className="attr-key">
+              {Object.keys(current.attributes).map((elem) => (
+                <p>{elem}</p>
+              ))}
+            </div>
+            <div className="attr-value">
+              {Object.values(current.attributes).map((elem) => (
+                <p>{elem}</p>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -206,7 +208,6 @@ const SingleItem = ({
           className={accordian.reviews ? "accordian-open" : "accordian-close"}
         >
           <div className="item-review">
-            <hr />
             <h4>Love this item!</h4>
             <div
               className="Stars"

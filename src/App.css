@@ -64,10 +64,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #a04661;
-}
-
 .arrow {
   border: solid black;
   border-width: 0 2px 2px 0;
@@ -318,12 +314,11 @@ SINGLE ITEM COMPONENT
 
 .accordian-open {
   height: fit-content;
-  transition: height 0.25s ease-in;
+  margin: 5% 0;
 }
 
 .accordian-close {
   height: 0px;
-  transition: height 0.15s ease-out;
   overflow: hidden;
 }
 
@@ -349,11 +344,22 @@ SINGLE ITEM COMPONENT
 .item-ratings {
   margin-bottom: 10px;
 }
+
 .item-ratings span {
   color: #006faf;
   margin-left: 5px;
   font-size: 0.9em;
 }
+
+.attributes {
+  display: flex;
+}
+
+.attributes .attr-key {
+  text-transform: capitalize;
+  margin-right: 15%;
+}
+
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
 https://github.com/dev-ggaurav/responsive-hamburger-tutorial
@@ -532,9 +538,6 @@ footer button {
   font-size: 1.1em;
 }
 
-footer a:hover {
-  color: #a04661;
-}
 .social-media {
   text-align: center;
   margin: 7% 0;
