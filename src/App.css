@@ -263,6 +263,10 @@ SINGLE ITEM COMPONENT
   margin: 0 8%;
 }
 
+.single-item p {
+  font-size: 1.1em;
+}
+
 .single-item img {
   width: 100%;
   border: 1px solid grey;
@@ -279,7 +283,6 @@ SINGLE ITEM COMPONENT
 
 .item-rating span {
   color: #0044aa;
-  font-size: 0.9em;
   margin-left: 10px;
 }
 .details-accord {
@@ -329,10 +332,6 @@ SINGLE ITEM COMPONENT
   color: #006faf;
   margin-left: 8px;
   vertical-align: bottom;
-}
-
-.item-summary-ship span:nth-child(3) {
-  font-size: 0.9em;
 }
 
 .item-btns {
@@ -408,6 +407,17 @@ SINGLE ITEM COMPONENT
   text-transform: capitalize;
   margin-right: 15%;
   font-weight: 700;
+}
+
+.item-review {
+  margin: 5% 0;
+  padding: 5% 0;
+}
+.item-review {
+  border-bottom: 1px solid;
+}
+.item-review:last-child {
+  border-bottom: none;
 }
 
 .review-helpful {
