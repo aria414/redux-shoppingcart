@@ -8,6 +8,8 @@ import {
   removeFromFave,
   adjustItemQty,
 } from "../actions";
+//import the reviews data
+import sampleReviews from "../datafiles/reviews";
 
 //=========== FUNCTIONAL COMPONENT START =============
 const SingleItem = ({
@@ -102,12 +104,14 @@ const SingleItem = ({
         <h3>{current.title}</h3>
         <h4>$ {current.price}</h4>
 
-        <div
-          className="Stars"
-          style={{ "--rating": current.rating }}
-          aria-label={`Rating of this product is ${current.rating} out of 5.`}
-        ></div>
-        <span>(278 Reviews)</span>
+        <div className="item-rating">
+          <div
+            className="Stars"
+            style={{ "--rating": current.rating }}
+            aria-label={`Rating of this product is ${current.rating} out of 5.`}
+          ></div>
+          <span>(278 Reviews)</span>
+        </div>
 
         <div className="item-summary-ship">
           <p>
@@ -218,59 +222,26 @@ const SingleItem = ({
         <div
           className={accordian.reviews ? "accordian-open" : "accordian-close"}
         >
-          <div className="item-review">
-            <h4>Love this item!</h4>
-            <div
-              className="Stars"
-              style={{ "--rating": current.rating }}
-              aria-label={`Rating of this product is ${current.rating} out of 5.`}
-            ></div>
-            <span>01/25/2021</span>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt.
-            </p>
-            <p>Emiya Shirou</p>
-            <p>Kyoto, Japan</p>
-            <i className="las la-thumbs-up"></i>
-          </div>
-          <div className="item-review">
-            <hr />
-            <h4>Best for fans</h4>
-            <div
-              className="Stars"
-              style={{ "--rating": "5" }}
-              aria-label="Rating of this product is 5 out of 5"
-            ></div>
-            <span>01/25/2021</span>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt.
-            </p>
-            <p>Emiya Shirou</p>
-            <p>Kyoto, Japan</p>
-            <i className="las la-thumbs-up"></i>
-          </div>
-          <div className="item-review">
-            <hr />
-            <h4>Cichue notice me</h4>
-            <div
-              className="Stars"
-              style={{ "--rating": "3.5" }}
-              aria-label="Rating of this product is 3.5 out of 5"
-            ></div>
-            <span>01/25/2021</span>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt.
-            </p>
-            <p>Emiya Shirou</p>
-            <p>Kyoto, Japan</p>
-            <i className="las la-thumbs-up"></i>
-          </div>
+          {sampleReviews.map((review) => {
+            return (
+              <div className="item-review">
+                <h4>{review.title}</h4>
+                <div
+                  className="Stars"
+                  style={{ "--rating": review.rating }}
+                  aria-label={`Rating of this product is ${review.rating} out of 5.`}
+                ></div>
+                <span>{review.date}</span>
+                <p>{review.content}</p>
+                <p>{review.author}</p>
+                <p>{review.location}</p>
+                <div className="review-helpful">
+                  <i className="las la-thumbs-up"></i>
+                  <span>{review.helpful}</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       {/*End of item-details div*/}
