@@ -313,7 +313,7 @@ SINGLE ITEM COMPONENT
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 2% 0;
+  margin: 3% 0 5% 0;
 }
 
 .item-summary-ship i {
@@ -389,7 +389,7 @@ SINGLE ITEM COMPONENT
 }
 
 .item-details {
-  margin: 10% 0 40% 0;
+  margin: 15% 0 40% 0;
 }
 
 .attributes {
@@ -402,6 +402,15 @@ SINGLE ITEM COMPONENT
   font-weight: 700;
 }
 
+.item-review .las.la-thumbs-up {
+  font-size: 1.5em;
+  border: 1px solid;
+  width: 45px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px;
+}
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
 https://github.com/dev-ggaurav/responsive-hamburger-tutorial
