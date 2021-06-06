@@ -279,6 +279,8 @@ SINGLE ITEM COMPONENT
 
 .item-rating span {
   color: #0044aa;
+  font-size: 0.9em;
+  margin-left: 10px;
 }
 .details-accord {
   padding: 3px 15px;
