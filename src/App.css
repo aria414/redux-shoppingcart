@@ -108,10 +108,6 @@ button {
 
 input {
   border: 1px solid #929292;
-  width: 50px;
-  height: 35px;
-  border-radius: 10px;
-  padding: 3px;
   text-align: center;
 }
 
@@ -240,6 +236,7 @@ Borrowed from the css-tricks website:
   font-family: "Roboto", serif;
   line-height: 1;
   margin: 8px 8px 0 0;
+  width: 100px;
 }
 
 .Stars:before {
@@ -328,19 +325,42 @@ SINGLE ITEM COMPONENT
 
 .item-summary-ship span:nth-child(3) {
   font-size: 0.9em;
-  margin-left: auto;
 }
 
 .item-btns {
   display: flex;
   justify-content: space-between;
 }
-.item-btns input {
-  width: 30%;
+
+.qty-btn {
+  width: 25%;
   height: 35px;
 }
+
+.qty-btn input {
+  width: 50%;
+  height: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.qty-btn input::-webkit-outer-spin-button,
+.qty-btn input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.qty-btn input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.qty-btn button {
+  width: 25%;
+  height: 100%;
+}
+
 #add-item {
-  width: 40%;
+  width: 45%;
   height: 35px;
   font-size: 1.1em;
   background: #002866;
@@ -353,9 +373,11 @@ SINGLE ITEM COMPONENT
   height: 35px;
   font-size: 1.7em;
 }
+
 #fave-item i {
   color: #a04661;
 }
+
 .item-ratings {
   margin-bottom: 10px;
 }
@@ -366,6 +388,10 @@ SINGLE ITEM COMPONENT
   font-size: 0.9em;
 }
 
+.item-details {
+  margin: 10% 0 40% 0;
+}
+
 .attributes {
   display: flex;
 }
@@ -373,6 +399,7 @@ SINGLE ITEM COMPONENT
 .attributes .attr-key {
   text-transform: capitalize;
   margin-right: 15%;
+  font-weight: 700;
 }
 
 /*  ------------------------

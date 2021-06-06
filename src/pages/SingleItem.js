@@ -42,6 +42,16 @@ const SingleItem = ({
     console.log("qtyVal changed: ", inputval);
   };
 
+  const handleQty = (operation) => {
+    if (operation === "plus") {
+      setQtyVal(qtyVal + 1);
+      if (qtyVal >= 10) setQtyVal(10);
+    }
+    if (operation === "minus") {
+      setQtyVal(qtyVal - 1);
+      if (qtyVal <= 1) setQtyVal(1);
+    }
+  };
   const handleAddItem = (id, val) => {
     console.log("qtyVal value after click: ", val);
     adjustItemQty(id, val);
@@ -118,7 +128,7 @@ const SingleItem = ({
           <div className="attributes">
             <div className="attr-key">
               {Object.keys(current.attributes).map((elem) => (
-                <p>{elem}</p>
+                <p>{elem}:</p>
               ))}
             </div>
             <div className="attr-value">
@@ -129,14 +139,18 @@ const SingleItem = ({
           </div>
         </div>
         <div className="item-btns">
-          <input
-            min="1"
-            type="number"
-            id="qty"
-            name="qty"
-            value={qtyVal}
-            onChange={onChangeHandler}
-          />
+          <div className="qty-btn">
+            <button onClick={() => handleQty("minus")}>-</button>
+            <input
+              min="1"
+              type="number"
+              id="qty"
+              name="qty"
+              value={qtyVal}
+              onChange={onChangeHandler}
+            />
+            <button onClick={() => handleQty("plus")}>+</button>
+          </div>
 
           <button
             id="add-item"
@@ -179,7 +193,7 @@ const SingleItem = ({
           <div className="attributes">
             <div className="attr-key">
               {Object.keys(current.attributes).map((elem) => (
-                <p>{elem}</p>
+                <p>{elem}:</p>
               ))}
             </div>
             <div className="attr-value">
