@@ -443,18 +443,22 @@ SINGLE ITEM COMPONENT
 }
 
 .review-helpful {
-  font-size: 1.3em;
+  font-size: 1.5em;
   border: 1px solid;
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 35px;
   border-radius: 5px;
   text-align: center;
   margin-top: 2%;
   color: #a04661;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .review-helpful span {
-  font-size: 16px;
-  vertical-align: text-top;
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 5px;
 }
 
 /*  ------------------------
@@ -549,6 +553,7 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 .search-bar input {
   border: none;
   width: 90%;
+  height: 100%;
   text-align: left;
 }
 
