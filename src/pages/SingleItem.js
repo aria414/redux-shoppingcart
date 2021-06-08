@@ -226,18 +226,26 @@ const SingleItem = ({
             return (
               <div className="item-review">
                 <h4>{review.title}</h4>
-                <div
-                  className="Stars"
-                  style={{ "--rating": review.rating }}
-                  aria-label={`Rating of this product is ${review.rating} out of 5.`}
-                ></div>
-                <span>{review.date}</span>
+                <div className="review-date-stars">
+                  <div
+                    className="Stars"
+                    style={{ "--rating": review.rating }}
+                    aria-label={`Rating of this product is ${review.rating} out of 5.`}
+                  ></div>
+                  <span>{review.date}</span>
+                </div>
+
                 <p>{review.content}</p>
-                <p>{review.author}</p>
-                <p>{review.location}</p>
-                <div className="review-helpful">
-                  <i className="las la-thumbs-up"></i>
-                  <span>{review.helpful}</span>
+
+                <div className="user-helpful-group">
+                  <div className="review-userinfo">
+                    <p>{review.author}</p>
+                    <p>{review.location}</p>
+                  </div>
+                  <div className="review-helpful">
+                    <i className="las la-thumbs-up"></i>
+                    <span>{review.helpful}</span>
+                  </div>
                 </div>
               </div>
             );

@@ -238,7 +238,7 @@ Borrowed from the css-tricks website:
   font-size: var(--star-size);
   font-family: "Roboto", serif;
   line-height: 1;
-  margin: 8px 8px 0 0;
+  margin: 2% 2% 2% 0;
   width: 100px;
 }
 
@@ -283,7 +283,7 @@ SINGLE ITEM COMPONENT
 
 .item-rating span {
   color: #0044aa;
-  margin-left: 10px;
+  margin-left: 2%;
 }
 .details-accord {
   padding: 3px 15px;
@@ -414,10 +414,32 @@ SINGLE ITEM COMPONENT
   padding: 5% 0;
 }
 .item-review {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #b5b8bd;
 }
 .item-review:last-child {
   border-bottom: none;
+}
+
+.review-date-stars,
+.user-helpful-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-helpful-group {
+  margin-top: 5%;
+}
+
+.review-userinfo p:first-child {
+  font-weight: 700;
+}
+.review-userinfo p:nth-child(2),
+.review-date-stars span {
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 300;
+  color: #707070;
+  font-size: 15px;
 }
 
 .review-helpful {
@@ -427,10 +449,12 @@ SINGLE ITEM COMPONENT
   height: 30px;
   border-radius: 5px;
   text-align: center;
+  margin-top: 2%;
+  color: #a04661;
 }
 .review-helpful span {
   font-size: 16px;
-  padding: 0px;
+  vertical-align: text-top;
 }
 
 /*  ------------------------
@@ -584,12 +608,12 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 footer {
   background: #ededed;
   padding: 5% 5%;
-  font-family: "Open-Sans", sans-serif;
-  font-size: 15px;
 }
 
 footer li {
   font-weight: 300;
+  font-family: "Open-Sans", sans-serif;
+  font-size: 15px;
 }
 footer h3 {
   font-size: 1.2em;
