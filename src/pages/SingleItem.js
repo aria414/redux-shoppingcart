@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import Carousel from "react-bootstrap/Carousel";
 //Connect the component with the states.
 import { connect } from "react-redux";
 //Import Actions
@@ -81,6 +82,14 @@ const SingleItem = ({
     console.log("statei is: ", accordian);
   };
 
+  //========Carousel stuff from Bootstrap...=========
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  //============ USEEFFECT ==============
   useEffect(() => {
     //First load the boolean to see if product was faved
     const isFaved = current.faved;
