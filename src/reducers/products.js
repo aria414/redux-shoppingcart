@@ -22,8 +22,14 @@ const INITIAL_STATE = {
         height: 5,
         material: "Plastic",
       },
-      image:
+      image: [
         "https://images.unsplash.com/photo-1591991731833-b4807cf7ef94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-2.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-3.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-4.jpg",
+      ],
+
       faved: false,
     },
     {
@@ -39,8 +45,15 @@ const INITIAL_STATE = {
         height: 6,
         material: "Ceramic",
       },
-      image:
+      image: [
         "https://images.unsplash.com/photo-1572119865084-43c285814d63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+
+        "http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-2.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-3.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-4.jpg",
+      ],
+
       faved: false,
     },
     {
@@ -56,8 +69,13 @@ const INITIAL_STATE = {
         height: 6,
         material: "Paper and Ink",
       },
-      image:
+      image: [
         "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
+        "http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-2.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-3.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-4.jpg",
+      ],
       faved: false,
     },
     {
@@ -73,8 +91,13 @@ const INITIAL_STATE = {
         height: 6.55,
         material: "Cotton",
       },
-      image:
+      image: [
         "https://static.myfigurecollection.net/pics/figure/large/447232.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-2.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-3.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-4.jpg",
+      ],
       faved: false,
     },
     {
@@ -90,7 +113,13 @@ const INITIAL_STATE = {
         height: 6.55,
         material: "Cotton",
       },
-      image: "https://i.ebayimg.com/images/g/D~YAAOSwRn9d-IlA/s-l1600.jpg",
+      image: [
+        "https://i.ebayimg.com/images/g/D~YAAOSwRn9d-IlA/s-l1600.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-2.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-3.jpg",
+        "http://lorempixel.com/output/cats-q-c-640-480-4.jpg",
+      ],
       faved: false,
     },
   ],

@@ -62,7 +62,7 @@ const OneProduct = ({
         to={`product/${productData.id}`}
         onClick={() => loadCurrentItem(productData)}
       >
-        <img src={productData.image} alt={productData.title} />
+        <img src={productData.image[0]} alt={productData.title} />
       </Link>
 
       <div className="product-details">

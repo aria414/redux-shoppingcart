@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-// import Carousel from "react-bootstrap/Carousel";
+import { Carousel } from "react-responsive-carousel";
+
 //Connect the component with the states.
 import { connect } from "react-redux";
 //Import Actions
@@ -42,7 +43,7 @@ const SingleItem = ({
   const onChangeHandler = (e) => {
     let inputval = e.target.value;
     setQtyVal(inputval);
-    console.log("qtyVal changed: ", inputval);
+    //console.log("qtyVal changed: ", inputval);
   };
 
   const handleQty = (operation) => {
@@ -56,7 +57,7 @@ const SingleItem = ({
     }
   };
   const handleAddItem = (id, val) => {
-    console.log("qtyVal value after click: ", val);
+    //console.log("qtyVal value after click: ", val);
     adjustItemQty(id, val);
     addToCart(id, val);
   };
@@ -79,15 +80,11 @@ const SingleItem = ({
       [id]: val,
     });
 
-    console.log("statei is: ", accordian);
+    //console.log("accordian state is: ", accordian);
   };
 
-  //========Carousel stuff from Bootstrap...=========
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  console.log("image array ", current.image);
+  const imagesArr = current.image;
 
   //============ USEEFFECT ==============
   useEffect(() => {
@@ -100,7 +97,7 @@ const SingleItem = ({
     else setFaveIcon("lar la-heart");
 
     const itemQty = qtyVal;
-    console.log("useEff qty: ", itemQty);
+    // console.log("useEff qty: ", itemQty);
 
     setQtyVal(itemQty);
     //Re-render everytime current.faved is changed
@@ -108,7 +105,16 @@ const SingleItem = ({
 
   return (
     <section className="single-item">
-      <img src={current.image} alt={current.title} />
+      <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
+        {current.image.map((picture, index) => {
+          return (
+            <div>
+              <img alt={`Image ${index}`} src={picture} />
+            </div>
+          );
+        })}
+      </Carousel>
+
       <div className="item-summary">
         <h3>{current.title}</h3>
         <h4>$ {current.price}</h4>
@@ -141,7 +147,7 @@ const SingleItem = ({
           <div className="attributes">
             <div className="attr-key">
               {Object.keys(current.attributes).map((elem) => (
-                <p>{elem}:</p>
+                <p key={elem.id}>{elem}:</p>
               ))}
             </div>
             <div className="attr-value">
