@@ -267,9 +267,12 @@ SINGLE ITEM COMPONENT
   font-size: 1.1em;
 }
 
-.single-item img {
-  width: 100%;
-  border: 1px solid grey;
+.carousel .slide img {
+  border: 1px solid #b5b8bd !important;
+}
+
+.carousel .thumb {
+  border: 1px solid #b5b8bd;
 }
 
 .item-summary h3 {

@@ -1,6 +1,6 @@
 import "./reset.css";
-import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./App.css";
 
 //Component imports...
 import Navbar from "./components/Navbar";

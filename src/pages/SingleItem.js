@@ -83,9 +83,6 @@ const SingleItem = ({
     //console.log("accordian state is: ", accordian);
   };
 
-  console.log("image array ", current.image);
-  const imagesArr = current.image;
-
   //============ USEEFFECT ==============
   useEffect(() => {
     //First load the boolean to see if product was faved
@@ -109,7 +106,7 @@ const SingleItem = ({
         {current.image.map((picture, index) => {
           return (
             <div>
-              <img alt={`Image ${index}`} src={picture} />
+              <img alt={`Image ${index + 1}`} src={picture} />
             </div>
           );
         })}
