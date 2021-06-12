@@ -64,6 +64,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 span {
   display: inline-block;
 }
@@ -311,7 +315,7 @@ SINGLE ITEM COMPONENT
 }
 .collapse {
   background-color: #ffffff;
-  border-bottom: 1px solid #929292;
+  border-bottom: 1px solid #b5b8bd;
 }
 
 .accordian-open {
@@ -527,6 +531,51 @@ CART COMPONENT STYLES
   font-size: 1.2em;
 }
 
+.cart-item {
+  width: 95%;
+  margin: 5% auto;
+  border-bottom: 1px solid #b5b8bd;
+  padding: 3% 0;
+}
+
+.cart-item-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.cart-details-txt {
+  width: 40%;
+}
+
+.cart-price-qty {
+  width: 20%;
+}
+
+.cart-price-qty input {
+  width: 50px;
+  height: 35px;
+}
+
+.cart-btns {
+  text-align: right;
+  margin-top: 5%;
+}
+.cart-btns #remove-cart,
+.cart-btns #fave-item {
+  border: none;
+  font-size: 18px;
+  width: 30%;
+}
+
+.cart-btns i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
 /*  ------------------------
 Responsive Hamburger Menu - From Developer Gaurav's repo
 https://github.com/dev-ggaurav/responsive-hamburger-tutorial

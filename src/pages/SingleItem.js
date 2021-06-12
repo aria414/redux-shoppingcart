@@ -21,7 +21,7 @@ const SingleItem = ({
   removeFromFave,
   adjustQty,
 }) => {
-  //set toggle for fave icon
+  // ====== set toggle for fave icon ======
   const [faveClicked, setFaveClicked] = useState(false);
   const [faveIcon, setFaveIcon] = useState("");
   const [qtyVal, setQtyVal] = useState(1);

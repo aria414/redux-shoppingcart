@@ -22,7 +22,6 @@ function App({ current }) {
   //Access the products state from the Store
   const shop = useSelector((state) => state.shop);
 
-  console.log(shop);
   return (
     <div>
       <Navbar />

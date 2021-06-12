@@ -3,18 +3,12 @@ import { Link } from "react-router-dom";
 //Connect the component with the states.
 import { connect } from "react-redux";
 //import actions
-import {
-  addToCart,
-  loadCurrentItem,
-  addToFave,
-  removeFromFave,
-} from "../actions";
+import { loadCurrentItem, addToFave, removeFromFave } from "../actions";
 
 //productData passed in as prop
-//addToCart and loadCurrentItem are from the keys below in the function mapDispatchToProps
+//loadCurrentItem are from the keys below in the function mapDispatchToProps
 const OneProduct = ({
   productData,
-  addToCart,
   loadCurrentItem,
   addToFave,
   removeFromFave,
@@ -28,7 +22,7 @@ const OneProduct = ({
 
   const handleFave = (id) => {
     let isClicked = !faveClicked;
-    setFaveClicked(!faveClicked);
+    setFaveClicked(isClicked);
 
     //the isClicked variable is to make the if statements easier to read.
     //Otherwise I have to use if(!favedClicked) which is bad to read
@@ -82,7 +76,6 @@ const OneProduct = ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => dispatch(addToCart(id)),
     loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
     addToFave: (id) => dispatch(addToFave(id)),
     removeFromFave: (id) => dispatch(removeFromFave(id)),

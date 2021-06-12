@@ -1,47 +1,100 @@
-import React, { useState } from "react";
-
+import { useState, useEffect } from "react";
+//Connect to the redux store
 import { connect } from "react-redux";
-import { removeFromCart, adjustItemQty } from "../actions";
 
-//itemData was passed in from Cart.
-const CartItem = ({ itemData, removeFromCart, adjustQty }) => {
-  const [input, setInput] = useState(itemData.qty);
+//Import Actions
+import {
+  removeFromCart,
+  adjustItemQty,
+  addToFave,
+  removeFromFave,
+} from "../actions";
+
+//productData was passed in from Cart.
+const CartItem = ({
+  productData,
+  removeFromCart,
+  adjustQty,
+  addToFave,
+  removeFromFave,
+}) => {
+  const [input, setInput] = useState(productData.qty);
 
   const onChangeHandler = (e) => {
-    console.log(e.target.value);
     setInput(e.target.value);
     //use the event target value cause its faster.
-    adjustQty(itemData.id, e.target.value);
+    adjustQty(productData.id, e.target.value);
   };
 
+  // ====== set toggle for fave icon ======
+  const [faveClicked, setFaveClicked] = useState(false);
+  const [faveIcon, setFaveIcon] = useState("");
+
+  const handleFave = (id) => {
+    let isClicked = !faveClicked;
+    setFaveClicked(isClicked);
+    console.log("isClicked ", isClicked);
+    //the isClicked variable is to make the if statements easier to read.
+    //Otherwise I have to use if(!favedClicked) which is bad to read
+    if (isClicked === true) {
+      addToFave(id);
+      setFaveIcon("las la-heart");
+    }
+    if (isClicked === false) {
+      removeFromFave(id);
+      setFaveIcon("lar la-heart");
+    }
+  };
+
+  useEffect(() => {
+    const isFaved = productData.faved;
+    //If it was faved, display the filled heart icon. Else, display the line heart icon
+    if (isFaved) setFaveIcon("las la-heart");
+    else setFaveIcon("lar la-heart");
+
+    console.log("isFaved ", isFaved);
+  }, [productData.faved]);
+
   return (
-    <div className="product">
-      <img src={itemData.image[0]} alt={itemData.title} />
+    <div className="cart-item">
+      <div className="cart-item-details">
+        <img src={productData.image[0]} alt={productData.title} />
 
-      <div className="product-details">
-        <p>{itemData.title}</p>
-        <p>{itemData.description}</p>
-        <p>$ {itemData.price}</p>
-      </div>
+        <div className="cart-details-txt">
+          <h3>{productData.title}</h3>
+          <p>WTGTAFSD81</p>
+          <div className="item-rating">
+            <div
+              className="Stars"
+              style={{ "--rating": productData.rating }}
+              aria-label={`Rating of this product is ${productData.rating} out of 5.`}
+            ></div>
+            <span>(278 Reviews)</span>
+          </div>
+        </div>
 
-      <div>
-        <div>
-          <label htmlFor="qty">Qty</label>
+        <div className="cart-price-qty">
+          <h4>$ {productData.price}</h4>
           <input
             min="1"
             type="number"
             id="qty"
             name="qty"
-            value={itemData.qty}
+            value={productData.qty}
             onChange={onChangeHandler}
           />
         </div>
+      </div>
 
-        <button onClick={() => removeFromCart(itemData.id)}>
-          <img
-            src="https://image.flaticon.com/icons/svg/709/709519.svg"
-            alt=""
-          />
+      <div className="cart-btns">
+        <button id="remove-cart" onClick={() => removeFromCart(productData.id)}>
+          <i className="las la-trash-alt"></i>
+          Remove
+        </button>
+
+        <button id="fave-item" onClick={() => handleFave(productData.id)}>
+          <i className={faveIcon}></i>
+          Save
         </button>
       </div>
     </div>
@@ -52,7 +105,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     removeFromCart: (id) => dispatch(removeFromCart(id)),
     adjustQty: (id, value) => dispatch(adjustItemQty(id, value)),
+    addToFave: (id) => dispatch(addToFave(id)),
+    removeFromFave: (id) => dispatch(removeFromFave(id)),
   };
 };
 
+//Use Null since i'm not mapping states...
 export default connect(null, mapDispatchToProps)(CartItem);

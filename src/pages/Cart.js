@@ -31,7 +31,7 @@ const Cart = ({ cart, clearCart }) => {
       <div>
         <h2>YOUR CART</h2>
         <Link to="/list">
-          <i class="las la-arrow-left"></i> Back to Shopping
+          <i className="las la-arrow-left"></i> Back to Shopping
         </Link>
       </div>
 
@@ -61,9 +61,9 @@ const Cart = ({ cart, clearCart }) => {
       <button id="checkout">Begin to Checkout</button>
       <button onClick={() => isCleared()}>Clear Cart</button>
 
-      <div>
+      <div className="cart-products">
         {cart.map((item) => (
-          <CartItem key={item.id} itemData={item} />
+          <CartItem key={item.id} productData={item} />
         ))}
       </div>
     </div>
