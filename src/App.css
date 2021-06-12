@@ -273,6 +273,8 @@ SINGLE ITEM COMPONENT
 
 .carousel .thumb {
   border: 1px solid #b5b8bd;
+  height: 60px;
+  object-fit: cover;
 }
 
 .item-summary h3 {
