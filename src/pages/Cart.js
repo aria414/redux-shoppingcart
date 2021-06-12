@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import CartItem from "../components/CartItem";
 import { clearCart } from "../actions";
@@ -27,19 +28,44 @@ const Cart = ({ cart, clearCart }) => {
   };
   return (
     <div className="cart">
-      <h2>Cart Page</h2>
+      <div>
+        <h2>YOUR CART</h2>
+        <Link to="/list">
+          <i class="las la-arrow-left"></i> Back to Shopping
+        </Link>
+      </div>
+
+      <div className="cart-summary">
+        <div>
+          <p>Number of Items: </p>
+          <p>Subtotal: </p>
+          <p>Ship to: </p>
+          <p>Tax: </p>
+          <span>Discount: </span>
+        </div>
+
+        <div>
+          <p>{totalItems}</p>
+          <p>{totalPrice}</p>
+          <p>12345</p>
+          <p>$2.35</p>
+          <span>-$0.00</span>
+        </div>
+
+        <div>
+          <h3>Total: </h3>
+          <h3>{totalPrice}</h3>
+        </div>
+      </div>
+
+      <button id="checkout">Begin to Checkout</button>
+      <button onClick={() => isCleared()}>Clear Cart</button>
 
       <div>
         {cart.map((item) => (
           <CartItem key={item.id} itemData={item} />
         ))}
       </div>
-
-      <h4>Cart Summary</h4>
-      <p>TOTAL: {totalItems}</p>
-      <p>PICE: {totalPrice}</p>
-      <button>Proceed to Checkout</button>
-      <button onClick={() => isCleared()}>Clear Cart</button>
     </div>
   );
 };

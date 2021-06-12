@@ -7,7 +7,7 @@ const Fave = ({ fave }) => {
   return (
     <section>
       <h2>Favorites</h2>
-      <div className="item-list">
+      <div className="product-list">
         {fave.map((item) => (
           <OneProduct key={item.id} productData={item} />
         ))}

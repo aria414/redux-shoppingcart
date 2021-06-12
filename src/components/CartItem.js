@@ -16,7 +16,7 @@ const CartItem = ({ itemData, removeFromCart, adjustQty }) => {
 
   return (
     <div className="product">
-      <img src={itemData.image} alt={itemData.title} />
+      <img src={itemData.image[0]} alt={itemData.title} />
 
       <div className="product-details">
         <p>{itemData.title}</p>
