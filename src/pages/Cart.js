@@ -16,7 +16,7 @@ const Cart = ({ cart, clearCart }) => {
       items += item.qty;
       price += item.qty * item.price;
 
-      setTotalPrice(price.toFixed(2));
+      setTotalPrice(price.toFixed(2)); //fixed 2 decimal places
       setTotalItems(items);
     });
   }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
@@ -26,6 +26,14 @@ const Cart = ({ cart, clearCart }) => {
     setTotalItems(0);
     setTotalPrice(0);
   };
+
+  //Passed down to CartItem component, use this to detect which item was removed.
+  //Then deduct the product price and qty from the cart summary for this component.
+  const removeCart = (item) => {
+    setTotalItems(totalItems - item.qty);
+    setTotalPrice((totalPrice - item.qty * item.price).toFixed(2));
+  };
+
   return (
     <div className="cart">
       <div>
@@ -48,7 +56,7 @@ const Cart = ({ cart, clearCart }) => {
           <p>{totalItems}</p>
           <p>{totalPrice}</p>
           <p>12345</p>
-          <p>$2.35</p>
+          <p>$0.00</p>
           <span>-$0.00</span>
         </div>
 
@@ -63,7 +71,7 @@ const Cart = ({ cart, clearCart }) => {
 
       <div className="cart-products">
         {cart.map((item) => (
-          <CartItem key={item.id} productData={item} />
+          <CartItem key={item.id} productData={item} removeCart={removeCart} />
         ))}
       </div>
     </div>

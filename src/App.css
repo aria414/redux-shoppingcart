@@ -532,7 +532,7 @@ CART COMPONENT STYLES
 }
 
 .cart-item {
-  width: 95%;
+  width: 90%;
   margin: 5% auto;
   border-bottom: 1px solid #b5b8bd;
   padding: 3% 0;
@@ -544,12 +544,12 @@ CART COMPONENT STYLES
 }
 
 .cart-item img {
-  width: 30%;
+  width: 20%;
   object-fit: cover;
 }
 
 .cart-details-txt {
-  width: 40%;
+  width: 45%;
 }
 
 .cart-price-qty {
@@ -570,6 +570,7 @@ CART COMPONENT STYLES
   border: none;
   font-size: 18px;
   width: 30%;
+  color: #a04661;
 }
 
 .cart-btns i {

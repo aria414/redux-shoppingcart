@@ -5,6 +5,18 @@ import { connect } from "react-redux";
 const Navbar = ({ cart, fave }) => {
   const [cartCount, setCartCount] = useState(0);
   const [faveCount, setFaveCount] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log("you serached for: ", searchTerm);
+    setSearchTerm("");
+  };
+
+  const handleChange = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+  };
 
   //State change if cart changes or cart count.
   useEffect(() => {
@@ -78,8 +90,15 @@ const Navbar = ({ cart, fave }) => {
         </div>
 
         <div className="search-bar">
-          <input type="text" id="search" name="search" placeholder="search" />
-          <button id="submit">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="search"
+            onChange={handleChange}
+            value={searchTerm}
+          />
+          <button id="submit" onClick={handleSearch}>
             <span className="material-icons">search</span>
           </button>
         </div>
@@ -92,45 +111,7 @@ const mapStateToProps = (state) => {
   return {
     cart: state.shop.cart,
     fave: state.shop.fave,
+    products: state.shop.products,
   };
 };
 export default connect(mapStateToProps)(Navbar);
-
-/*
-<nav>
-<div className="nav-wrapper">
-  <Link to="/">Logo</Link>
-  <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-    <i class="material-icons">menu</i>
-  </a>
-  <ul class="right hide-on-med-and-down">
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/list">Product Listing</Link>
-    </li>
-    <li>
-      <Link to="/cart">Cart: {cartCount}</Link>
-    </li>
-  </ul>
-</div>
-</nav>
-
-<ul className="sidenav" id="mobile-demo">
-<li>
-  <Link to="/">Home</Link>
-</li>
-<li>
-  <Link to="/list">Product Listing</Link>
-</li>
-<li>
-  <Link to="/product">Product Item</Link>
-</li>
-<li>
-  <Link to="/cart">Cart: {cartCount}</Link>
-</li>
-</ul>
-
-
-*/
