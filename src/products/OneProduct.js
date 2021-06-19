@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //import actions
 import { loadCurrentItem, addToFave, removeFromFave } from "../actions";
+//import styles
+import "./productstyle.css";
 
 //productData passed in as prop
 //loadCurrentItem are from the keys below in the function mapDispatchToProps

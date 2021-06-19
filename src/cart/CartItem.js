@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 //Connect to the redux store
 import { connect } from "react-redux";
-
+import "./cartstyle.css";
 //Import Actions
 import {
   removeFromCart,
   adjustItemQty,
   addToFave,
   removeFromFave,
+  loadCurrentItem,
 } from "../actions";
 
 //productData was passed in from Cart.
@@ -19,6 +21,7 @@ const CartItem = ({
   removeFromFave,
   removeCart,
   fave,
+  loadCurrentItem,
 }) => {
   const [input, setInput] = useState(productData.qty);
 
@@ -28,7 +31,7 @@ const CartItem = ({
     adjustQty(productData.id, e.target.value);
   };
 
-  // ====== set toggle for fave icon ======
+  // ------- set toggle for fave icon -------
   const [faveClicked, setFaveClicked] = useState(false);
   const [faveIcon, setFaveIcon] = useState("");
   const [isFaved, setIsFaved] = useState(false);
@@ -58,8 +61,8 @@ const CartItem = ({
   };
 
   useEffect(() => {
-    const inFaved = fave.findIndex((elem) => elem.id == productData.id);
-    console.log("found in fave ", inFaved);
+    //See if the current cart item is in the fave array, if yes,returns index.
+    const inFaved = fave.findIndex((elem) => elem.id === productData.id);
 
     //If it was faved, display the filled heart icon. Else, display the line heart icon
     if (inFaved >= 0) {
@@ -76,8 +79,12 @@ const CartItem = ({
   return (
     <div className="cart-item">
       <div className="cart-item-details">
-        <img src={productData.image[0]} alt={productData.title} />
-
+        <Link
+          to={`product/${productData.id}`}
+          onClick={() => loadCurrentItem(productData)}
+        >
+          <img src={productData.image[0]} alt={productData.title} />
+        </Link>
         <div className="cart-details-txt">
           <h3>{productData.title}</h3>
           <p>WTGTAFSD81</p>
@@ -92,7 +99,7 @@ const CartItem = ({
         </div>
 
         <div className="cart-price-qty">
-          <h4>$ {productData.price}</h4>
+          <h4>{`$${productData.price}`}</h4>
           <input
             min="1"
             type="number"
@@ -131,6 +138,7 @@ const mapDispatchToProps = (dispatch) => {
     adjustQty: (id, value) => dispatch(adjustItemQty(id, value)),
     addToFave: (id) => dispatch(addToFave(id)),
     removeFromFave: (id) => dispatch(removeFromFave(id)),
+    loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
   };
 };
 

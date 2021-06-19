@@ -1,0 +1,371 @@
+/* ======================================
+PRODUCT LISTING 
+====================================== */
+.container {
+  padding-top: 128px;
+}
+
+button {
+  background-color: white;
+  border: 1px solid #929292;
+}
+
+input {
+  border: 1px solid #929292;
+  text-align: center;
+}
+
+.material-icons {
+  font-size: 24px;
+  color: black;
+}
+
+.sale-banner {
+  padding: 2%;
+  background: #ffc5c5;
+}
+
+.advertise-banner {
+  padding: 5% 2%;
+  width: 100%;
+  min-height: 300px;
+  max-height: 500px;
+  background: #fbf5ed;
+  text-align: center;
+  font-family: "Work-Sans" sans-serif;
+}
+
+.advertise-banner img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.advertise-banner h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4em;
+  margin: 5% 0;
+}
+.advertise-banner p {
+  font-size: 1.2em;
+}
+
+.advertise-banner button {
+  border-radius: 5px;
+  background-color: #5e9236;
+  color: white;
+  width: 120px;
+  height: 35px;
+  margin: 5% 0;
+}
+
+.product-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.fave-icons {
+  width: 34px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  right: 0;
+}
+
+.fave-icons i {
+  color: white;
+  font-size: 22px;
+  margin: 15%;
+}
+
+i.las.la-heart {
+  color: #ff6e6e;
+}
+
+/* .fave-icons:hover .la-heart:before {
+    color: #ff6e6e;
+    font-weight: 900;
+  } */
+
+/* ======================================
+  ONE PRODUCT COMPONENT
+  ====================================== */
+.product {
+  width: 45%;
+  margin: 0 0 10% 4%;
+  position: relative;
+}
+
+.product img {
+  width: 100%;
+  min-height: 170px;
+  object-fit: cover;
+}
+.product-details h3 {
+  font-size: 1.1em;
+}
+
+.product-details h4 {
+  font-size: 1.2em;
+  color: #03a800;
+}
+
+.product-details p {
+  font-size: 0.9em;
+  color: #8a8a8a;
+  margin: 10px 0;
+}
+.product-details span {
+  font-size: 0.8em;
+  color: #8a8a8a;
+}
+
+/* ------------------
+  STAR REVIEW ICONS SECTION 
+  Borrowed from the css-tricks website:
+   https://css-tricks.com/five-methods-for-five-star-ratings/
+  ---------------- */
+:root {
+  --star-size: 1em;
+  --star-color: #c7c7c7;
+  --star-background: #002f6f;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: "Roboto", serif;
+  line-height: 1;
+  margin: 2% 2% 2% 0;
+  /* width: 100px; */
+}
+
+.Stars:before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--star-background) var(--percent),
+    var(--star-color) var(--percent)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ======================================
+  SINGLE ITEM COMPONENT
+  ====================================== */
+
+.single-item {
+  margin: 0 8%;
+}
+
+.single-item p {
+  font-size: 1.1em;
+}
+
+.carousel .slide img {
+  border: 1px solid #b5b8bd !important;
+}
+
+.carousel .thumb {
+  border: 1px solid #b5b8bd;
+  height: 60px;
+  object-fit: cover;
+}
+
+.item-summary h3 {
+  font-size: 1.4em;
+}
+
+.item-summary h4 {
+  font-size: 1.6em;
+  color: #03a800;
+}
+
+.item-rating {
+  display: flex;
+  align-items: center;
+}
+.item-rating span {
+  color: #0044aa;
+}
+.details-accord {
+  padding: 3px 15px;
+  text-align: center;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.details-accord h3 {
+  font-size: 1.3em;
+  color: #454649;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.expand {
+  background-color: #f3f3f3;
+}
+.collapse {
+  background-color: #ffffff;
+  border-bottom: 1px solid #b5b8bd;
+}
+
+.accordian-open {
+  height: fit-content;
+  margin: 5% 0;
+}
+
+.accordian-close {
+  height: 0px;
+  overflow: hidden;
+}
+
+.item-summary-ship {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 3% 0 5% 0;
+}
+
+.item-summary-ship i {
+  font-size: 1.6em;
+  color: #006faf;
+  margin-left: 8px;
+  vertical-align: bottom;
+}
+
+.item-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.qty-btn {
+  width: 25%;
+  height: 35px;
+}
+
+.qty-btn input {
+  width: 50%;
+  height: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.qty-btn input::-webkit-outer-spin-button,
+.qty-btn input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.qty-btn input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.qty-btn button {
+  width: 25%;
+  height: 100%;
+}
+
+#add-item {
+  width: 45%;
+  height: 35px;
+  font-size: 1.1em;
+  background: #002866;
+  color: white;
+  border: none;
+}
+
+#fave-item {
+  width: 15%;
+  height: 35px;
+  font-size: 1.7em;
+}
+
+#fave-item i {
+  color: #a04661;
+}
+
+.item-ratings {
+  margin-bottom: 10px;
+}
+
+.item-ratings span {
+  color: #006faf;
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+.item-details {
+  margin: 15% 0 40% 0;
+}
+
+.attributes {
+  display: flex;
+}
+
+.attributes .attr-key {
+  text-transform: capitalize;
+  margin-right: 15%;
+  font-weight: 700;
+}
+
+.item-review {
+  margin: 5% 0;
+  padding: 5% 0;
+}
+.item-review {
+  border-bottom: 1px solid #b5b8bd;
+}
+.item-review:last-child {
+  border-bottom: none;
+}
+
+.review-date-stars,
+.user-helpful-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-helpful-group {
+  margin-top: 5%;
+}
+
+.review-userinfo p:first-child {
+  font-weight: 700;
+}
+.review-userinfo p:nth-child(2),
+.review-date-stars span {
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 300;
+  color: #707070;
+  font-size: 15px;
+}
+
+.review-helpful {
+  font-size: 1.5em;
+  border: 1px solid;
+  width: 60px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 2%;
+  color: #a04661;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.review-helpful span {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 5px;
+}

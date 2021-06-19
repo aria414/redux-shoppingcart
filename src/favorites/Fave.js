@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import OneProduct from "../components/OneProduct";
+import OneProduct from "../products/OneProduct";
 
 const Fave = ({ fave }) => {
   return (

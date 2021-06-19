@@ -1,0 +1,48 @@
+/*  ==========================================
+======== FOOTER STYLES ========
+==========================================*/
+footer {
+  background: #ededed;
+  padding: 5% 5%;
+}
+
+footer li {
+  font-weight: 300;
+  font-family: "Open-Sans", sans-serif;
+  font-size: 15px;
+}
+footer h3 {
+  font-size: 1.2em;
+}
+
+footer h3,
+footer button,
+.footer-column {
+  margin-bottom: 5%;
+}
+
+footer button {
+  display: block;
+  width: 150px;
+  height: 35px;
+  background: #00a0b6;
+  color: white;
+  border: none;
+  font-size: 1.1em;
+}
+
+.social-media {
+  text-align: center;
+  margin: 7% 0;
+}
+
+.lab {
+  font-size: 30px;
+  color: black;
+  margin-left: 7%;
+}
+
+.footnotes {
+  font-size: 12px;
+  font-weight: 300;
+}

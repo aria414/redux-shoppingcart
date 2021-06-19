@@ -3,25 +3,22 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./App.css";
 
 //Component imports...
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ProductList from "./pages/ProductList";
-import Cart from "./pages/Cart";
-import Fave from "./pages/Fave";
-import SingleItem from "./pages/SingleItem";
+import Navbar from "./navbar/Navbar";
+import Footer from "./footer/Footer";
+import ProductList from "./products/ProductList";
+import Cart from "./cart/Cart";
+import Fave from "./favorites/Fave";
+import SingleItem from "./products/SingleItem";
 import adbanner from "./adbanner.png";
 
 //Router imports
 import { Route, Switch, Redirect } from "react-router-dom";
 //Access the states in the store
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { connect } from "react-redux";
 
 //Destructure 'current' in the mapstate func below.
 function App({ current }) {
-  //Access the products state from the Store
-  const shop = useSelector((state) => state.shop);
-
   return (
     <div>
       <Navbar />

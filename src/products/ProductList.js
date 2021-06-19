@@ -3,8 +3,9 @@ import React from "react";
 //connect is a higher order function which is why you see (mapstate)(products)
 import { connect } from "react-redux";
 //import component OneProduct
-import OneProduct from "../components/OneProduct";
-
+import OneProduct from "./OneProduct";
+//import styles
+import "./productstyle.css";
 //{products} Destructured from mapStateToProps
 const ProductList = ({ products }) => {
   return (

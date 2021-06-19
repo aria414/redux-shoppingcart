@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import CartItem from "../components/CartItem";
+import CartItem from "./CartItem";
 import { clearCart } from "../actions";
+import "./cartstyle.css";
 
 const Cart = ({ cart, clearCart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -55,7 +56,7 @@ const Cart = ({ cart, clearCart }) => {
         <div>
           <p>{totalItems}</p>
           <p>{totalPrice}</p>
-          <p>12345</p>
+          <p>Zip: 12345</p>
           <p>$0.00</p>
           <span>-$0.00</span>
         </div>
@@ -67,13 +68,15 @@ const Cart = ({ cart, clearCart }) => {
       </div>
 
       <button id="checkout">Begin to Checkout</button>
-      <button onClick={() => isCleared()}>Clear Cart</button>
 
       <div className="cart-products">
         {cart.map((item) => (
           <CartItem key={item.id} productData={item} removeCart={removeCart} />
         ))}
       </div>
+      <button id="clear-cart" onClick={() => isCleared()}>
+        Clear Cart
+      </button>
     </div>
   );
 };

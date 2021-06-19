@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
-
 //Connect the component with the states.
 import { connect } from "react-redux";
+//import styles
+import "./productstyle.css";
+
 //Import Actions
 import {
   addToCart,
@@ -105,8 +107,8 @@ const SingleItem = ({
       <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
         {current.image.map((picture, index) => {
           return (
-            <div>
-              <img alt={`Image ${index + 1}`} src={picture} />
+            <div key={index}>
+              <img alt={`product photo ${index + 1}`} src={picture} />
             </div>
           );
         })}
@@ -149,7 +151,7 @@ const SingleItem = ({
             </div>
             <div className="attr-value">
               {Object.values(current.attributes).map((elem) => (
-                <p>{elem}</p>
+                <p key={elem.id}>{elem}</p>
               ))}
             </div>
           </div>
@@ -209,12 +211,12 @@ const SingleItem = ({
           <div className="attributes">
             <div className="attr-key">
               {Object.keys(current.attributes).map((elem) => (
-                <p>{elem}:</p>
+                <p key={elem.id}>{elem}:</p>
               ))}
             </div>
             <div className="attr-value">
               {Object.values(current.attributes).map((elem) => (
-                <p>{elem}</p>
+                <p key={elem.id}>{elem}</p>
               ))}
             </div>
           </div>
@@ -234,9 +236,9 @@ const SingleItem = ({
         <div
           className={accordian.reviews ? "accordian-open" : "accordian-close"}
         >
-          {sampleReviews.map((review) => {
+          {sampleReviews.map((review, index) => {
             return (
-              <div className="item-review">
+              <div className="item-review" key={index}>
                 <h4>{review.title}</h4>
                 <div className="review-date-stars">
                   <div
