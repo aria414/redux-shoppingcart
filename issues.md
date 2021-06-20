@@ -40,3 +40,17 @@ button:hover {
 }
 
 ```
+
+- ProductList old code
+
+```
+const mapStateToProps = (state) => {
+  return {
+    //In the reducers/index.js file we named the key 'shop'
+    products: state.shop.products,
+  };
+};
+
+export default connect(mapStateToProps)(ProductList);
+
+```

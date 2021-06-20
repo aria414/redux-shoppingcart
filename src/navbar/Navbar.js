@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./navstyle.css";
-const Navbar = ({ cart, fave }) => {
+
+const Navbar = ({ cart, fave, handleSearch, clickHome }) => {
   const [cartCount, setCartCount] = useState(0);
   const [faveCount, setFaveCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    console.log("you serached for: ", searchTerm);
-    setSearchTerm("");
-  };
-
   const handleChange = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
+  };
+
+  const subitForm = (event) => {
+    event.preventDefault();
+    handleSearch(searchTerm);
   };
 
   //State change if cart changes or cart count.
@@ -37,9 +37,9 @@ const Navbar = ({ cart, fave }) => {
   return (
     <header className="header">
       <nav className="top-nav">
-        <Link to="/" className="nav-logo">
+        <div className="nav-logo" onClick={clickHome}>
           iLuvStuff
-        </Link>
+        </div>
         <ul className="top-nav-icons">
           <li>
             <span className="material-icons">account_circle</span>
@@ -89,7 +89,7 @@ const Navbar = ({ cart, fave }) => {
           <span className="bar"></span>
         </div>
 
-        <div className="search-bar">
+        <form onSubmit={subitForm} className="search-bar">
           <input
             type="text"
             id="search"
@@ -98,10 +98,10 @@ const Navbar = ({ cart, fave }) => {
             onChange={handleChange}
             value={searchTerm}
           />
-          <button id="submit" onClick={handleSearch}>
+          <button id="submit" type="submit">
             <span className="material-icons">search</span>
           </button>
-        </div>
+        </form>
       </nav>
     </header>
   );

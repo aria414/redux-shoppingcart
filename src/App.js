@@ -1,6 +1,8 @@
 import "./reset.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./App.css";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 //Component imports...
 import Navbar from "./navbar/Navbar";
@@ -18,10 +20,33 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 //Destructure 'current' in the mapstate func below.
-function App({ current }) {
+function App({ current, products }) {
+  const history = useHistory();
+  //state with the current product listing. Will change when search is used
+  const [listing, setListing] = useState(products);
+
+  //Taking result from Navbar component's search bar
+  const handleSearch = (value) => {
+    const data = products.filter((item) => {
+      return item.title.toLowerCase().includes(value);
+    });
+
+    console.log("searched ", value);
+
+    setListing(data);
+
+    history.push(`/list/search/${value}`);
+  };
+
+  //Function embeded to the Logo to return to main page and reset listing state to all products
+  const clickLogo = () => {
+    history.push("/");
+    setListing(products);
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar handleSearch={handleSearch} clickHome={clickLogo} />
       <div className="container">
         <div className="sale-banner">
           20% off on all clearance items. Free shipping for orders over $50.Use
@@ -36,11 +61,16 @@ function App({ current }) {
         </div>
         <Switch>
           <Route exact path="/">
-            <ProductList />
+            <ProductList listing={listing} />
           </Route>
           <Route path="/list">
-            <ProductList />
+            <ProductList listing={listing} />
           </Route>
+
+          <Route path="/list/search/:search">
+            <ProductList listing={listing} />
+          </Route>
+
           <Route path="/cart">
             <Cart />
           </Route>
@@ -65,6 +95,7 @@ function App({ current }) {
 const mapStateToProps = (state) => {
   return {
     current: state.shop.currentItem,
+    products: state.shop.products,
   };
 };
 

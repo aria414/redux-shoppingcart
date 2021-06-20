@@ -7,24 +7,22 @@ import OneProduct from "./OneProduct";
 //import styles
 import "./productstyle.css";
 //{products} Destructured from mapStateToProps
-const ProductList = ({ products }) => {
-  return (
+
+const ProductList = ({ listing }) => {
+  // console.log("listing ", listing);
+
+  return listing ? (
     <>
       <h2>All Products</h2>
       <section className="product-list">
-        {products.map((item) => {
+        {listing.map((item) => {
           return <OneProduct key={item.id} productData={item} />;
         })}
       </section>
     </>
+  ) : (
+    <h2>Loading....</h2>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    //In the reducers/index.js file we named the key 'shop'
-    products: state.shop.products,
-  };
-};
-
-export default connect(mapStateToProps)(ProductList);
+export default ProductList;
