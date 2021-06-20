@@ -42,7 +42,41 @@ footer button {
   margin-left: 7%;
 }
 
-.footnotes {
+.footnotes p {
   font-size: 12px;
   font-weight: 300;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .footer-column {
+    width: 28%;
+    margin-bottom: 3%;
+  }
+  .footnotes {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .social-media {
+    display: flex;
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  footer {
+    padding: 2%;
+  }
+  .footer-content {
+    max-width: 1224px;
+    margin: 0 auto;
+  }
 }
