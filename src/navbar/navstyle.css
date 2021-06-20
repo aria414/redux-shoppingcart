@@ -18,6 +18,7 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 
 .nav-menu.active {
   left: 0;
+  padding-left: 3%;
 }
 
 .nav-item {
@@ -46,7 +47,7 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 .inactive {
   display: none;
 }
-/* ------------ TABLET SIZES ------------ */
+/* ------------ DEFAULT STYLES ------------ */
 .header {
   position: fixed;
   top: 0;
@@ -60,8 +61,13 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 .top-nav,
 .navbar {
   height: 64px;
+}
+
+.header,
+.top-nav {
   border-bottom: 1px solid #b5b8bd;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -184,9 +190,20 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 }
 
 @media only screen and (min-width: 1024px) {
+  .navbar {
+    max-width: 1224px;
+    margin: 0 auto;
+  }
+
+  .nav-logo.tablet-view {
+    position: relative;
+    left: -43%;
+  }
+
   .nav-menu {
     display: flex;
     padding: 0px;
+    position: relative;
     left: 15%;
     top: 0;
     flex-direction: row;
@@ -209,7 +226,7 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
     width: 25%;
     height: 35px;
     position: relative;
-    left: 20%;
+    left: -2%;
     border: none;
     border-bottom: 2px solid;
     border-radius: 0px;

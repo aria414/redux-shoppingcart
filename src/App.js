@@ -49,8 +49,10 @@ function App({ current, products }) {
       <Navbar handleSearch={handleSearch} clickHome={clickLogo} />
       <div className="container">
         <div className="sale-banner">
-          20% off on all clearance items. Free shipping for orders over $50.Use
-          code SHIPFREE at checkout for shipping discount
+          <p>
+            20% off on all clearance items. Free shipping for orders over
+            $50.Use code SHIPFREE at checkout for shipping discount
+          </p>
         </div>
         <div className="advertise-banner">
           <img src={adbanner} alt="Sale banner" />

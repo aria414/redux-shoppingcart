@@ -405,6 +405,37 @@ i.las.la-heart {
 
 @media only screen and (min-width: 1024px) {
   .product {
-    width: 20%;
+    width: 22%;
+    margin: 0 3% 0 0;
+  }
+
+  .product-list {
+    max-width: 1224px;
+    margin: 0 auto;
+
+    padding: 0 0 0 1%;
+  }
+
+  .sale-banner {
+    height: 50px;
+    padding: 15px 0px;
+  }
+  .sale-banner p {
+    max-width: 1224px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .advertise-banner {
+    padding: 3% 0;
+    align-items: center;
+  }
+  .advertise-banner img {
+    width: 25%;
+    height: 100%;
+  }
+
+  .advertise-banner > div {
+    min-width: 20%;
   }
 }

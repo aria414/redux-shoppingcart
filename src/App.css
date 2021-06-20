@@ -104,3 +104,8 @@ span {
 .headline {
   padding: 4%;
 }
+@media only screen and (min-width: 1024px) {
+  .headline {
+    padding: 2% 4%;
+  }
+}
