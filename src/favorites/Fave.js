@@ -4,7 +4,7 @@ import OneProduct from "../products/OneProduct";
 const Fave = ({ fave }) => {
   return (
     <section>
-      <h2>Favorites</h2>
+      <h2 className="headline">Favorites</h2>
       <div className="product-list">
         {fave.map((item) => (
           <OneProduct key={item.id} productData={item} />

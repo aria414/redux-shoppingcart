@@ -65,20 +65,19 @@ const Navbar = ({ cart, fave, handleSearch, clickHome }) => {
               Home
             </Link>
           </li>
-
           <li className="nav-item">
             <Link to="/list" className="nav-link">
-              Product Listing
+              Products
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/cart" className="nav-link">
-              Cart: {cartCount}
+            <Link to="/" className="nav-link">
+              Sale
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/fave" className="nav-link">
-              Fave: {faveCount}
+            <Link to="/" className="nav-link">
+              Blog
             </Link>
           </li>
         </ul>
@@ -87,6 +86,10 @@ const Navbar = ({ cart, fave, handleSearch, clickHome }) => {
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
+        </div>
+
+        <div className="nav-logo tablet-view" onClick={clickHome}>
+          iLuvStuff
         </div>
 
         <form onSubmit={subitForm} className="search-bar">
@@ -102,6 +105,24 @@ const Navbar = ({ cart, fave, handleSearch, clickHome }) => {
             <span className="material-icons">search</span>
           </button>
         </form>
+
+        <ul className="top-nav-icons tablet-view">
+          <li>
+            <span className="material-icons">account_circle</span>
+          </li>
+          <li>
+            <Link to="/cart" className="nav-link">
+              <span className="material-icons">shopping_cart</span>
+              {cartCount}
+            </Link>
+          </li>
+          <li>
+            <Link to="/fave" className="nav-link">
+              <span className="material-icons">favorite</span>
+              {faveCount}
+            </Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );

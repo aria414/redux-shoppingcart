@@ -369,3 +369,42 @@ i.las.la-heart {
   font-weight: 700;
   margin-left: 5px;
 }
+
+@media only screen and (min-width: 768px) {
+  .container {
+    padding-top: 63px;
+  }
+
+  .advertise-banner {
+    min-height: 250px;
+    max-height: 300px;
+    display: flex;
+    padding: 5%;
+    flex-direction: row-reverse;
+    text-align: left;
+    justify-content: center;
+  }
+  .advertise-banner img {
+    width: 40%;
+  }
+
+  .advertise-banner h2 {
+    margin: 2% 0;
+  }
+  .advertise-banner button {
+    margin-top: 10%;
+  }
+  .product {
+    width: 28%;
+    margin-bottom: 5%;
+  }
+  .product-details p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .product {
+    width: 20%;
+  }
+}

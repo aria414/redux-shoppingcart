@@ -13,7 +13,7 @@ const ProductList = ({ listing }) => {
 
   return listing ? (
     <>
-      <h2>All Products</h2>
+      <h2 className="headline">All Products</h2>
       <section className="product-list">
         {listing.map((item) => {
           return <OneProduct key={item.id} productData={item} />;

@@ -100,3 +100,7 @@ span {
   -webkit-transform: rotate(45deg);
   margin-top: 5px;
 }
+
+.headline {
+  padding: 4%;
+}

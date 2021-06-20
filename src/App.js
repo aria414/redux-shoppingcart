@@ -35,7 +35,7 @@ function App({ current, products }) {
 
     setListing(data);
 
-    history.push(`/list/search/${value}`);
+    history.push(`/list/search=${value}`);
   };
 
   //Function embeded to the Logo to return to main page and reset listing state to all products
@@ -54,10 +54,11 @@ function App({ current, products }) {
         </div>
         <div className="advertise-banner">
           <img src={adbanner} alt="Sale banner" />
-
-          <h2>SHOP HOME DECOR</h2>
-          <p>20% off on all clearance items</p>
-          <button>Shop Sale</button>
+          <div>
+            <h2>SHOP HOME DECOR</h2>
+            <p>20% off on all clearance items</p>
+            <button>Shop Sale</button>
+          </div>
         </div>
         <Switch>
           <Route exact path="/">
@@ -67,7 +68,7 @@ function App({ current, products }) {
             <ProductList listing={listing} />
           </Route>
 
-          <Route path="/list/search/:search">
+          <Route path="/list/search=:search">
             <ProductList listing={listing} />
           </Route>
 
