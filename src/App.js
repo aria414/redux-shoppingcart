@@ -28,7 +28,7 @@ function App({ current, products }) {
   //Taking result from Navbar component's search bar
   const handleSearch = (value) => {
     const data = products.filter((item) => {
-      return item.title.toLowerCase().includes(value);
+      return item.title.toLowerCase().includes(value.toLowerCase());
     });
 
     console.log("searched ", value);
