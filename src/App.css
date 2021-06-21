@@ -106,7 +106,7 @@ span {
 }
 @media only screen and (min-width: 1024px) {
   .headline {
-    padding: 2% 0%;
+    padding: 2% 1%;
     max-width: 1224px;
     margin: 0 auto;
   }

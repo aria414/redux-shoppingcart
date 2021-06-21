@@ -166,18 +166,30 @@ i.las.la-heart {
 
 .single-item p {
   font-size: 1.1em;
+  /* font-family: "Inter", sans-serif;
+  font-weight: 300; */
 }
 
 .carousel .slide img {
   border: 1px solid #b5b8bd !important;
+  object-fit: contain;
+  height: 100%;
+}
+.slide > div {
+  width: 100%;
+  height: 100%;
 }
 
 .carousel .thumb {
   border: 1px solid #b5b8bd;
   height: 60px;
-  object-fit: cover;
 }
 
+.carousel .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .item-summary h3 {
   font-size: 1.4em;
 }
@@ -400,6 +412,22 @@ i.las.la-heart {
   }
   .product-details p {
     font-size: 1em;
+  }
+
+  .item-summary-ship,
+  .item-rating {
+    font-size: 1.2em;
+  }
+
+  .thumbs {
+    display: flex;
+    width: 85%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+
+  .single-item p {
+    font-size: 1.2em;
   }
 }
 

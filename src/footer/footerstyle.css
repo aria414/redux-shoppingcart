@@ -45,6 +45,7 @@ footer button {
 .footnotes p {
   font-size: 12px;
   font-weight: 300;
+  padding-left: 5%;
   text-align: center;
 }
 
@@ -55,19 +56,26 @@ footer button {
     justify-content: space-around;
   }
   .footer-column {
-    width: 28%;
-    margin-bottom: 3%;
+    width: 33%;
+    margin-bottom: 0px;
+
+    padding-left: 5%;
   }
   .footnotes {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
   }
+
+  .footnotes p {
+    text-align: left;
+  }
+
   .social-media {
     display: flex;
-    width: 30%;
+    width: 50%;
   }
 }
 
@@ -78,5 +86,10 @@ footer button {
   .footer-content {
     max-width: 1224px;
     margin: 0 auto;
+  }
+
+  .social-media {
+    margin: 2% 0;
+    width: 43%;
   }
 }
