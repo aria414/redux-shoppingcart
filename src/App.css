@@ -68,6 +68,9 @@ a:hover {
   text-decoration: underline;
 }
 
+button:hover {
+  cursor: pointer;
+}
 span {
   display: inline-block;
 }

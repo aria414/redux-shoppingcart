@@ -111,6 +111,7 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
 
 .nav-logo:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .top-nav {

@@ -104,84 +104,89 @@ const SingleItem = ({
 
   return (
     <section className="single-item">
-      <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
-        {current.image.map((picture, index) => {
-          return (
-            <div key={index}>
-              <img alt={`product photo ${index + 1}`} src={picture} />
-            </div>
-          );
-        })}
-      </Carousel>
+      <div className="item-top-details">
+        <div className="carousel-container">
+          <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
+            {current.image.map((picture, index) => {
+              return (
+                <div key={index}>
+                  <img alt={`product photo ${index + 1}`} src={picture} />
+                </div>
+              );
+            })}
+          </Carousel>
+        </div>
 
-      <div className="item-summary">
-        <h3>{current.title}</h3>
-        <h4>$ {current.price}</h4>
+        <div className="item-summary">
+          <h3>{current.title}</h3>
+          <h4>$ {current.price}</h4>
 
-        <div className="item-rating">
+          <div className="item-rating">
+            <div
+              className="Stars"
+              style={{ "--rating": current.rating }}
+              aria-label={`Rating of this product is ${current.rating} out of 5.`}
+            ></div>
+            <span>(278 Reviews)</span>
+          </div>
+
+          <div className="item-summary-ship">
+            <p>
+              IN STOCK
+              <i className="las la-check-circle"></i>
+            </p>
+
+            <span>Ship To - 12345 NY - Free</span>
+          </div>
+
           <div
-            className="Stars"
-            style={{ "--rating": current.rating }}
-            aria-label={`Rating of this product is ${current.rating} out of 5.`}
-          ></div>
-          <span>(278 Reviews)</span>
-        </div>
-
-        <div className="item-summary-ship">
-          <p>
-            IN STOCK
-            <i className="las la-check-circle"></i>
-          </p>
-
-          <span>Ship To - 12345 NY - Free</span>
-        </div>
-
-        <div
-          className="details-accord expand"
-          onClick={() => toggleAccord("quickspecs")}
-        >
-          <h3>QUICK SPECS</h3>
-        </div>
-        <div className="accordian-open">
-          <div className="attributes">
-            <div className="attr-key">
-              {Object.keys(current.attributes).map((elem) => (
-                <p key={elem.id}>{elem}:</p>
-              ))}
-            </div>
-            <div className="attr-value">
-              {Object.values(current.attributes).map((elem) => (
-                <p key={elem.id}>{elem}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="item-btns">
-          <div className="qty-btn">
-            <button onClick={() => handleQty("minus")}>-</button>
-            <input
-              min="1"
-              type="number"
-              id="qty"
-              name="qty"
-              value={qtyVal}
-              onChange={onChangeHandler}
-            />
-            <button onClick={() => handleQty("plus")}>+</button>
-          </div>
-
-          <button
-            id="add-item"
-            onClick={() => handleAddItem(current.id, qtyVal)}
+            className="details-accord expand"
+            onClick={() => toggleAccord("quickspecs")}
           >
-            Add To Cart
-          </button>
+            <h3>QUICK SPECS</h3>
+          </div>
+          <div className="accordian-open">
+            <div className="attributes">
+              <div className="attr-key">
+                {Object.keys(current.attributes).map((elem) => (
+                  <p key={elem.id}>{elem}:</p>
+                ))}
+              </div>
+              <div className="attr-value">
+                {Object.values(current.attributes).map((elem) => (
+                  <p key={elem.id}>{elem}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="item-btns">
+            <div className="qty-btn">
+              <button onClick={() => handleQty("minus")}>-</button>
+              <input
+                min="1"
+                type="number"
+                id="qty"
+                name="qty"
+                value={qtyVal}
+                onChange={onChangeHandler}
+              />
+              <button onClick={() => handleQty("plus")}>+</button>
+            </div>
 
-          <button id="fave-item" onClick={() => handleFave(current.id)}>
-            <i className={faveIcon}></i>
-          </button>
+            <button
+              id="add-item"
+              onClick={() => handleAddItem(current.id, qtyVal)}
+            >
+              Add To Cart
+            </button>
+
+            <button id="fave-item" onClick={() => handleFave(current.id)}>
+              <i className={faveIcon}></i>
+            </button>
+          </div>
         </div>
       </div>
+
       <div className="item-details">
         <div
           className={
