@@ -54,3 +54,83 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(ProductList);
 
 ```
+
+- Styles for carousel...not working.
+
+```
+
+  /* .carousel-root {
+    height: 400px;
+  }
+
+  .carousel.carousel-slider {
+    height: 80%;
+  }
+
+  .carousel .thumbs {
+    width: 100%;
+    height: 60px;
+  } */
+
+  /* .carousel-root {
+    display: flex;
+    flex-direction: row-reverse;
+
+    width: 50%;
+    height: 400px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .carousel .thumbs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .carousel .thumbs-wrapper {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .carousel {
+    width: 20%;
+    height: 100%;
+    margin-right: 2%;
+  }
+
+  .slide > div {
+    height: 400px;
+  } */
+```
+
+-SingleItem component stlyes for togglng accordian for desktop
+
+```
+  .item-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .details-accord {
+    grid-row: 1 / 2;
+  }
+
+  .details-accord:first-child {
+    grid-column: 1 / 2;
+  }
+
+  .details-accord:nth-child(2) {
+    grid-column: 2 / 3;
+  }
+
+  .details-accord:nth-child(3) {
+    grid-column: 3/ 4;
+  }
+
+  .accordian-open {
+    grid-column: 1 / 4;
+  }
+```

@@ -97,6 +97,11 @@ Tutorial post: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-ham
   text-transform: uppercase;
 }
 
+.nav-item a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+}
+
 .nav-logo {
   font-family: "Playfair Display", serif;
   font-size: 2rem;

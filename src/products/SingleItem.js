@@ -12,8 +12,10 @@ import {
   removeFromFave,
   adjustItemQty,
 } from "../actions";
-//import the reviews data
-import sampleReviews from "../datafiles/reviews";
+
+//Import the ItemDetails mobile component
+import ItemDetails from "./ItemDetails";
+import ItemDetailsDesk from "./ItemDetailsDesk";
 
 //=========== FUNCTIONAL COMPONENT START =============
 const SingleItem = ({
@@ -45,7 +47,6 @@ const SingleItem = ({
   const onChangeHandler = (e) => {
     let inputval = e.target.value;
     setQtyVal(inputval);
-    //console.log("qtyVal changed: ", inputval);
   };
 
   const handleQty = (operation) => {
@@ -59,30 +60,8 @@ const SingleItem = ({
     }
   };
   const handleAddItem = (id, val) => {
-    //console.log("qtyVal value after click: ", val);
     adjustItemQty(id, val);
     addToCart(id, val);
-  };
-
-  //Toggle the state of the accordian divs. If you click on quickspecs div, it sends 'quickspecs' back to function as an ID and use ID to target the key of this state object
-  //If quickspecs was clicked, change its state to true. And in HTML if it is true, swap class.
-  const [accordian, setAccordian] = useState({
-    quickspecs: false,
-    desc: false,
-    specs: false,
-    reviews: false,
-  });
-
-  //Set toggle for accordian in product details
-  const toggleAccord = (id) => {
-    let val = !accordian[id];
-
-    setAccordian({
-      ...accordian,
-      [id]: val,
-    });
-
-    //console.log("accordian state is: ", accordian);
   };
 
   //============ USEEFFECT ==============
@@ -96,7 +75,6 @@ const SingleItem = ({
     else setFaveIcon("lar la-heart");
 
     const itemQty = qtyVal;
-    // console.log("useEff qty: ", itemQty);
 
     setQtyVal(itemQty);
     //Re-render everytime current.faved is changed
@@ -139,10 +117,7 @@ const SingleItem = ({
             <span>Ship To - 12345 NY - Free</span>
           </div>
 
-          <div
-            className="details-accord expand"
-            onClick={() => toggleAccord("quickspecs")}
-          >
+          <div className="details-accord expand">
             <h3>QUICK SPECS</h3>
           </div>
           <div className="accordian-open">
@@ -187,91 +162,8 @@ const SingleItem = ({
         </div>
       </div>
 
-      <div className="item-details">
-        <div
-          className={
-            accordian.desc ? "details-accord expand" : "details-accord collapse"
-          }
-          onClick={() => toggleAccord("desc")}
-        >
-          <h3>DESCRIPTION</h3>
-          <i className={accordian.desc ? "arrow up" : "arrow down"}></i>
-        </div>
-        <div className={accordian.desc ? "accordian-open" : "accordian-close"}>
-          <p>{current.description}</p>
-        </div>
-
-        <div
-          className={
-            accordian.specs
-              ? "details-accord expand"
-              : "details-accord collapse"
-          }
-          onClick={() => toggleAccord("specs")}
-        >
-          <h3>SPECIFICATION</h3>
-          <i className={accordian.specs ? "arrow up" : "arrow down"}></i>
-        </div>
-        <div className={accordian.specs ? "accordian-open" : "accordian-close"}>
-          <div className="attributes">
-            <div className="attr-key">
-              {Object.keys(current.attributes).map((elem) => (
-                <p key={elem.id}>{elem}:</p>
-              ))}
-            </div>
-            <div className="attr-value">
-              {Object.values(current.attributes).map((elem) => (
-                <p key={elem.id}>{elem}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={
-            accordian.reviews
-              ? "details-accord expand"
-              : "details-accord collapse"
-          }
-          onClick={() => toggleAccord("reviews")}
-        >
-          <h3>REVIEWS</h3>
-          <i className={accordian.reviews ? "arrow up" : "arrow down"}></i>
-        </div>
-        <div
-          className={accordian.reviews ? "accordian-open" : "accordian-close"}
-        >
-          {sampleReviews.map((review, index) => {
-            return (
-              <div className="item-review" key={index}>
-                <h4>{review.title}</h4>
-                <div className="review-date-stars">
-                  <div
-                    className="Stars"
-                    style={{ "--rating": review.rating }}
-                    aria-label={`Rating of this product is ${review.rating} out of 5.`}
-                  ></div>
-                  <span>{review.date}</span>
-                </div>
-
-                <p>{review.content}</p>
-
-                <div className="user-helpful-group">
-                  <div className="review-userinfo">
-                    <p>{review.author}</p>
-                    <p>{review.location}</p>
-                  </div>
-                  <div className="review-helpful">
-                    <i className="las la-thumbs-up"></i>
-                    <span>{review.helpful}</span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      {/*End of item-details div*/}
+      <ItemDetails current={current} />
+      <ItemDetailsDesk current={current} />
     </section>
   );
 };
