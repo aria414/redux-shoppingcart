@@ -32,7 +32,9 @@ const ItemDetailsDesk = ({ current }) => {
           onClick={() => {
             toggleAccord("desc");
           }}
-          className="details-accord"
+          className={
+            accordian.desc ? "details-accord underline" : "details-accord"
+          }
         >
           <h3>DESCRIPTION</h3>
         </li>
@@ -40,7 +42,9 @@ const ItemDetailsDesk = ({ current }) => {
           onClick={() => {
             toggleAccord("specs");
           }}
-          className="details-accord"
+          className={
+            accordian.specs ? "details-accord underline" : "details-accord"
+          }
         >
           <h3>SPECIFICATIONS</h3>
         </li>
@@ -48,7 +52,9 @@ const ItemDetailsDesk = ({ current }) => {
           onClick={() => {
             toggleAccord("reviews");
           }}
-          className="details-accord"
+          className={
+            accordian.reviews ? "details-accord underline" : "details-accord"
+          }
         >
           <h3>REVIEWS</h3>
         </li>

@@ -44,36 +44,43 @@ const Cart = ({ cart, clearCart }) => {
         </Link>
       </div>
 
-      <div className="cart-summary">
-        <div>
-          <p>Number of Items: </p>
-          <p>Subtotal: </p>
-          <p>Ship to: </p>
-          <p>Tax: </p>
-          <span>Discount: </span>
+      <div className="cart-content">
+        <div className="cart-summary">
+          <div>
+            <p>Number of Items: </p>
+            <p>Subtotal: </p>
+            <p>Ship to: </p>
+            <p>Tax: </p>
+            <span>Discount: </span>
+          </div>
+
+          <div>
+            <p>{totalItems}</p>
+            <p>{totalPrice}</p>
+            <p>Zip: 12345</p>
+            <p>$0.00</p>
+            <span>-$0.00</span>
+          </div>
+
+          <div>
+            <h3>Total: </h3>
+            <h3>{totalPrice}</h3>
+          </div>
+
+          <button id="checkout">Begin to Checkout</button>
         </div>
 
-        <div>
-          <p>{totalItems}</p>
-          <p>{totalPrice}</p>
-          <p>Zip: 12345</p>
-          <p>$0.00</p>
-          <span>-$0.00</span>
-        </div>
-
-        <div>
-          <h3>Total: </h3>
-          <h3>{totalPrice}</h3>
+        <div className="cart-products">
+          {cart.map((item) => (
+            <CartItem
+              key={item.id}
+              productData={item}
+              removeCart={removeCart}
+            />
+          ))}
         </div>
       </div>
 
-      <button id="checkout">Begin to Checkout</button>
-
-      <div className="cart-products">
-        {cart.map((item) => (
-          <CartItem key={item.id} productData={item} removeCart={removeCart} />
-        ))}
-      </div>
       <button id="clear-cart" onClick={() => isCleared()}>
         Clear Cart
       </button>

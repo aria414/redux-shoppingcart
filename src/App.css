@@ -107,6 +107,11 @@ span {
 .headline {
   padding: 4%;
 }
+
+.underline {
+  border-bottom: 2px solid #000;
+}
+
 @media only screen and (min-width: 1024px) {
   .headline {
     padding: 2% 1%;

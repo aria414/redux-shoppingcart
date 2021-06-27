@@ -484,8 +484,9 @@ i.las.la-heart {
   }
 
   .single-item {
-    max-width: 1124px;
+    max-width: 1224px;
     margin: 3% auto;
+    padding: 2%;
   }
 
   .item-summary-ship,
@@ -493,6 +494,10 @@ i.las.la-heart {
     font-size: 1em;
   }
 
+  .item-review {
+    margin: 3% 0;
+    padding: 0 0 3% 0;
+  }
   .review-userinfo p:nth-child(2),
   .review-date-stars span {
     font-size: 16px;
